@@ -1,0 +1,58 @@
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 80vw; */
+  }
+.header__right_container {
+  /* background-color: #111c44; */
+  border-radius: 30px;
+  width: 422px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* margin-right: 20px; */
+  align-items: center;
+}
+
+.header__right_wrapper {
+  position: relative;
+  margin-right: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header__right_icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 4px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+}
+
+.header__right_input {
+  height: 50px;
+  width: 214px;
+  box-sizing: border-box;
+  padding-right: 2rem;
+  /* background-color: #0b1437; */
+  border-radius: 49px;
+  color: white;
+  /* font-family: 'IRANYekan'; */
+
+  /* identical to box height, or 143% */
+
+  text-align: right;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+
+  /* color: #FFFFFF; */
+}
