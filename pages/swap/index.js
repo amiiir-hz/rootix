@@ -64,23 +64,23 @@ function Swap(props) {
           <ChangeBit />
         </div>
       </div>
-      <div className={`${styles.swap__container_first} `}>
-        <div className="capitalize text-grey-700 font-light text-2xl mt-11 ml-9">
+      <div className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}>
+        <div className="capitalize font-light text-2xl mt-11 ml-9">
           recent activities
         </div>
         <table className="table-auto">
           <thead>
             <tr className=" flex flex-row px-9 mt-4">
-              <div className="capitalize text-lighter text-base text-grey-700 w-1/4">
+              <div className="capitalize text-lighter text-base w-1/4">
                 name
               </div>
-              <div className="capitalize text-lighter text-base text-grey-700 w-1/4">
+              <div className="capitalize text-lighter text-base w-1/4">
                 price
               </div>
-              <div className="capitalize text-lighter text-base text-grey-700 w-1/4">
+              <div className="capitalize text-lighter text-base  w-1/4">
                 exchamge
               </div>
-              <div className="capitalize text-lighter text-base text-grey-700 w-1/4">
+              <div className="capitalize text-lighter text-base  w-1/4">
                 time
               </div>
             </tr>

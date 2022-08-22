@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./bitField.module.css";
-import Image from "next/image";
-import BitLOgo1 from "../../public/assets/bitcoin-logo-svgrepo-com.svg";
+// import styles from "./bitField.module.css";
+// import Image from "next/image";
+// import BitLOgo1 from "../../public/assets/bitcoin-logo-svgrepo-com.svg";
 
 function BitField(props) {
   return (
-    <div className={styles.bitfield__container}>
-      <select className="bg-gray-800 border rounded-lg  border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10">
+    <div className='dark:bg-[#111C44] rounded-lg border-grey-400 w-full flex felx-row shadow-lg'>
+      <select className="dark:bg-gray-800 text-black bg-white border rounded-lg  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10">
         <option>
           {/* <div value="" selected>
             <Image src={BitLOgo} alt="avatar" className="w-2 h-2" /> */}
@@ -52,7 +52,7 @@ function BitField(props) {
         min={0.0}
         max={100.0}
         step={0.01}
-        className="bg-inherit border-none focus:border-0 h-10"
+        className="bg-inherit border-none focus:border-0 h-10 rounded-lg"
       />
     </div>
     // <div className="select-sim" id="select-color">

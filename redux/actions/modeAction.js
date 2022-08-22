@@ -8,7 +8,7 @@
 //         type:"dark"
 //     })
 // }
-export const mmodeSeloctor =(modeSelect)=>(dispatch)=>{
+export const modeSeloctor =(modeSelect)=>(dispatch)=>{
     dispatch({
         type:'select',
         payload:modeSelect

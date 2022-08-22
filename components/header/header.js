@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
+// import { connect } from "react-redux";
+// import {modeSeloctor} from '../../redux/actions/modeAction'
 import AvatarImage from "../../public/assets/Elipse 5.png";
 // import AvatarImage from "../../public/assets/Vector (9).png";
 // import Nightmode from "../../public/assets/Vector (10).png";
@@ -10,7 +12,7 @@ import AvatarImage from "../../public/assets/Elipse 5.png";
 import useDarkMode from "../../hooks/useDarkMode";
 // import Head from "next/head";
 
-function Header() {
+function Header(props) {
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
@@ -88,7 +90,7 @@ function Header() {
             />
           </svg>
           <input
-            className={`bg-[#F4F7FE] dark:bg-[#0B1437] ${styles.header__right_input}`}
+            className={`bg-[#F4F7FE] text-[#a3aed0] dark:text-white  dark:bg-[#0B1437] ${styles.header__right_input}`}
             placeholder="search"
           ></input>
         </div>
@@ -105,9 +107,11 @@ function Header() {
             fill="currentColor"
           />
         </svg>
-        {colorTheme === "light"? (
+        {colorTheme === "light" ? (
+          // {props.mode === "light"? (
           <svg
             onClick={() => setTheme("light")}
+            // onClick={()=>props.modeSeloctor('light')}
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-white"
             fill="none"
@@ -124,6 +128,7 @@ function Header() {
         ) : (
           <svg
             onClick={() => setTheme("dark")}
+            // onClick={()=>props.modeSeloctor('dark')}
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-[#a3aed0]"
             fill="none"
@@ -149,4 +154,11 @@ function Header() {
     </div>
   );
 }
+// const mapStateToProps = (state) => {
+//   return { mode: state.mode.selectMode };
+// };
+// const mapDispatchToProps = {
+//   modeSeloctor,
+// };
 export default Header;
+// export default Header;

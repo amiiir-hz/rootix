@@ -5,8 +5,8 @@
   margin: 10px auto;
   flex-direction: column;
   overflow-y: scroll;
-  background-color: #111c44;
-  color: #e4e4e4;
+  /* background-color: #111c44; */
+  /* color: #e4e4e4; */
   font-weight: 300;
   font-size: 23px;
   line-height: 120%;

@@ -32,7 +32,7 @@ a {
   overflow-y: scroll
 } */
 body::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
   /* background-color: grey; */
 }
 

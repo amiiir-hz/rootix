@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="">
       homepage
     </div>
     // <form className="h-screen flex flex-col justify-center items-center">
