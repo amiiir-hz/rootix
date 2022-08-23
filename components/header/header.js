@@ -10,10 +10,13 @@ import AvatarImage from "../../public/assets/Elipse 5.png";
 // import SearchIcon from "../../public/assets/icons8-search.svg";
 // import SlashIcon from "../../public/assets/slash-icon.svg";
 import useDarkMode from "../../hooks/useDarkMode";
+import { useRouter } from "next/router";
+
 // import Head from "next/head";
 
 function Header(props) {
   const [colorTheme, setTheme] = useDarkMode();
+  const router = useRouter();
 
   return (
     <div className={`mt-10 mb-8 mx-6 ${styles.header__container}`}>
@@ -22,7 +25,7 @@ function Header(props) {
           <ol className="inline-flex items-center space-x-1">
             <li className="inline-flex items-center">
               <a
-                href="#"
+                href="./"
                 className="inline-flex items-center lowercase text-sm font-medium text-[#2B3674] dark:text-gray-300 dark:hover:text-white"
               >
                 panel
@@ -43,17 +46,17 @@ function Header(props) {
                   ></path>
                 </svg>
                 <a
-                  href="#"
+                  href={`${router.pathname}`}
                   className="ml-1 text-sm font-medium text-[#2B3674] dark:text-gray-300 dark:hover:text-white"
                 >
-                  swap
+                  {router.pathname.split("/")}
                 </a>
               </div>
             </li>
           </ol>
         </nav>
         <div className="capitalize text-4xl leading-10 tracking-tight text-[#2B3674] dark:text-white">
-          swap
+          {router.pathname.split("/")}
         </div>
       </div>
 
