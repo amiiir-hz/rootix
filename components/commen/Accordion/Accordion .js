@@ -6,7 +6,7 @@ function Accordion(props) {
   console.log("first", props.id);
   return (
     <div className={`${props.className} Accordion`} key={props.id}>
-      <div className="dark:bg-gradient-to-r dark:from-[#111C44] dark:to-[#29323C] dark:text-white mb-[16px] overflow-hidden rounded-[2px]">
+      <div className="dark:bg-gradient-to-r dark:from-[#111C44] dark:to-[#29323C] dark:text-white text-black mb-[16px] overflow-hidden rounded-[2px]">
         <div className="collapsible-item">
           <input
             type="checkbox"
