@@ -16,8 +16,8 @@ function Header(props) {
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <div className={`mt-10 mb-8 mx-6 ${styles.header__container}`}>
-      <div className="text-center">
+    <div className={`mt-10 mb-8 mx-6 md:flex-row justify-between hidden md:flex`}>
+      <div className="text-start">
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1">
             <li className="inline-flex items-center">
@@ -154,11 +154,5 @@ function Header(props) {
     </div>
   );
 }
-// const mapStateToProps = (state) => {
-//   return { mode: state.mode.selectMode };
-// };
-// const mapDispatchToProps = {
-//   modeSeloctor,
-// };
+
 export default Header;
-// export default Header;
