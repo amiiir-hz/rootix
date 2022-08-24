@@ -2,8 +2,17 @@ import React from "react";
 import Tik from "@components/assets/svg/Tik";
 import Accordion from "@components/commen/Accordion/Accordion ";
 import { Text } from "@context/LanguageContext";
+import Toggle from "@components/commen/Toggle/Toggle";
+import { useForm, Controller } from "react-hook-form";
 
 function Info() {
+  const {
+    handleSubmit,
+    control,
+    register,
+    reset,
+    formState: { errors, isSubmitted },
+  } = useForm();
   return (
     <div>
       <div className=" grid grid-cols-[200px_minmax(900px,_1fr)] gap-x-[41px] gap-y-[20px] items-center dark:text-white dark:opacity-80 mb-[40px]">
@@ -34,8 +43,70 @@ function Info() {
         </p>
       </div>
       {Acco.map((item, id) => (
-        <Accordion label={item.title} id={id} key={id}>
-          {item.text}
+        <Accordion
+          label={item.title}
+          id={id}
+          key={id}
+          className=" w-5/12 dark:shadow-basic shadow-basiclight"
+        >
+          {id === 1 ? (
+            <div>
+              {" "}
+              <div className=" flex items-center">
+                <Toggle
+                  name="Toggle"
+                  control={control}
+                  className=" before:bg-[#fff]"
+                  classNameswitch="w-[36px] h-[18px] mr-[15px]"
+                  classNameparent="h-[18px]"
+                />{" "}
+                <p>
+                  <Text tid={item.text} />
+                </p>
+                <p>
+                  <Text tid={item.text} />
+                </p>
+              </div>
+              <div className=" flex items-center">
+                <Toggle
+                  name="Toggle"
+                  control={control}
+                  classNameswitch="w-[36px] h-[18px] mr-[15px]"
+                  classNameparent="h-[18px] opacity-0"
+                />
+                <p className=" mt-[9px]">
+                  <Text tid={"googleauthenticatorinfo"} />
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className=" flex items-center">
+              <Toggle
+                name="Toggle"
+                control={control}
+                className=" before:bg-[#fff]"
+                classNameswitch="w-[36px] h-[18px] mr-[15px]"
+                classNameparent="h-[18px]"
+              />{" "}
+              <p>
+                <Text tid={item.text} />
+              </p>
+            </div>
+          )}
+
+          <div className=" flex items-center mt-[22px]">
+            <Toggle
+              name="Toggle"
+              control={control}
+              className=" before:bg-[#fff]"
+              classNameswitch="w-[36px] h-[18px] mr-[15px]"
+              classNameparent="h-[18px]"
+            />
+
+            <p>
+              <Text tid={item.text1} />
+            </p>
+          </div>
         </Accordion>
       ))}
     </div>
@@ -46,28 +117,18 @@ export default Info;
 
 const Acco = [
   {
-    title:
-      "لورم ایپسوم متن ساختگی با تولید سادگی   گذشته حال و آینده، ایجاد کرد، در این صورت می  ایجاد کرد؟ ",
-    text: "   پاسخ: لورم ایپسوم متن ساختگی با تولید سادگی گذشته حال و آینده،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود درارائه راهکارها است. توان امید داشت که تمام و دشواری موجود در ارائه راهکارها است.توان امید داشت که تمام و",
+    title: "Logsandtransactionsnotification",
+    text: "Receivnotificationsviaemail",
+    text1: "Receivevianotificationsintheapp",
   },
-  // {
-  //   title:
-  //     "لورم ایپسوم متن ساختگی با تولید سادگی   گذشته حال و آینده، ایجاد کرد، در این صورت می  ایجاد کرد؟ ",
-  //   text: "   پاسخ: لورم ایپسوم متن ساختگی با تولید سادگی گذشته حال و آینده،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود درارائه راهکارها است. توان امید داشت که تمام و دشواری موجود در ارائه راهکارها است.توان امید داشت که تمام و",
-  // },
-  // {
-  //   title:
-  //     "لورم ایپسوم متن ساختگی با تولید سادگی   گذشته حال و آینده، ایجاد کرد، در این صورت می  ایجاد کرد؟ ",
-  //   text: "   پاسخ: لورم ایپسوم متن ساختگی با تولید سادگی گذشته حال و آینده،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود درارائه راهکارها است. توان امید داشت که تمام و دشواری موجود در ارائه راهکارها است.توان امید داشت که تمام و",
-  // },
-  // {
-  //   title:
-  //     "لورم ایپسوم متن ساختگی با تولید سادگی   گذشته حال و آینده، ایجاد کرد، در این صورت می  ایجاد کرد؟ ",
-  //   text: "   پاسخ: لورم ایپسوم متن ساختگی با تولید سادگی گذشته حال و آینده،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود درارائه راهکارها است. توان امید داشت که تمام و دشواری موجود در ارائه راهکارها است.توان امید داشت که تمام و",
-  // },
-  // {
-  //   title:
-  //     "لورم ایپسوم متن ساختگی با تولید سادگی   گذشته حال و آینده، ایجاد کرد، در این صورت می  ایجاد کرد؟ ",
-  //   text: "   پاسخ: لورم ایپسوم متن ساختگی با تولید سادگی گذشته حال و آینده،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود درارائه راهکارها است. توان امید داشت که تمام و دشواری موجود در ارائه راهکارها است.توان امید داشت که تمام و",
-  // },
+  {
+    title: "Twosteplogin",
+    text: "googleauthenticator",
+    text1: "emailcode",
+  },
+  {
+    title: "Confirmtransactions",
+    text: "Verificationwithgoogleauthenticator",
+    text1: "Verificationwithemail",
+  },
 ];

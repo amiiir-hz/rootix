@@ -8,6 +8,7 @@ module.exports = {
   //   extend: {},
   // },
   content: ["./pages/**/*.{js,ts,jsx,tsx}"],
+  important: true,
   plugins: [require("daisyui")],
   daisyui: {
     styled: false,
@@ -40,6 +41,10 @@ module.exports = {
         swipe: {
           50: "#111C44",
         },
+      },
+      boxShadow: {
+        basic: "1px 1px 10px rgba(0, 0, 0, 0.25)",
+        basiclight: "1px 2px 8px rgba(0, 0, 0, 0.13)",
       },
     },
   },

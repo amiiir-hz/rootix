@@ -1,6 +1,15 @@
 {
   "panel": "panel",
   "setting": "setting",
-  "AccountName": "Account Name"
-
+  "AccountName": "Account Name",
+  "Logsandtransactionsnotification": "Logs and transactions notification",
+  "Twosteplogin": "Two-step login",
+  "Confirmtransactions": "Confirm transactions",
+  "Receivnotificationsviaemail": "Receive notifications via email",
+  "Receivevianotificationsintheapp": "Receive via notifications in the app",
+  "googleauthenticator": "google authenticator",
+  "googleauthenticatorinfo": "( By activating this option, in order to log in to your account in addition to your username and password, you must enter the one-time code that you received from the Google Authenticator application. )",
+  "emailcode": "email code",
+  "Verificationwithgoogleauthenticator": "Verification with google authenticator",
+  "Verificationwithemail": "Verification with email"
 }

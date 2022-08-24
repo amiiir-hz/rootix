@@ -61,7 +61,59 @@ input:checked + .collapsible-item-label {
   /* img {
       transform: rotate(180deg); */
 }
+input:checked + .collapsible-item-label svg {
+  transform: rotate(180deg);
+}
 input:checked ~ .collapsible-item-content {
   max-height: 100vh;
-  padding: 0 3.4rem 3.1rem 2.5rem;
+  padding: 0 17px 33px 21px;
 }
+.toggle {
+  --handleoffset: 3.4rem;
+}
+.switch {
+  /* // direction: rtl !important; */
+}
+
+.slider {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input + .slider {
+  background-color: #d1d3d9 ;
+
+}
+input:checked + .slider {
+  background-color: #4318ff;
+}
+input:checked + .slider:before {
+  background-color: #fff !important;
+  left: 2.5px;
+}
+input + .slider:before {
+  right: 2.5px;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #fff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 38.57px;
+}
+
+/* .slider.round:before {
+  border-radius: 0.8rem;
+} */
