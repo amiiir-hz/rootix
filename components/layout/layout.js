@@ -12,9 +12,9 @@ function Layout(props) {
   // }, []);
   // setTheme(localStorage.getItem("theme"));
   return (
-    <div className="flex flex-row w-100 justify-end">
-      <Dashboard className="w-1/5" />
-      <div className="flex flex-col w-4/5 bg-[#F4F7FE] dark:bg-[#0B1437]">
+    <div className="flex flex-row w-full justify-end">
+      <Dashboard className="w-[18%]" />
+      <div className="flex flex-col w-[82%] bg-[#F4F7FE] dark:bg-[#0B1437]">
         <Header />
         <main>{props.children}</main>
         <Footer />

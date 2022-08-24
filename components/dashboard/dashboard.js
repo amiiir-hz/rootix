@@ -11,8 +11,8 @@ import Logo from "../../public/assets/logorootix [Recovered]-0۲ 1.png";
 
 function Dashboard(props) {
   return (
-    <div className={`w-72 h-screen bg-white dark:bg-[#111C44] h-auto`}>
-      <div className='mx-auto w-20 h-20'>
+    <div className={`w-[18%] h-screen bg-white dark:bg-[#111C44] h-auto`}>
+      <div className="mx-auto w-20 h-20">
         <Image src={Logo} alt="sgh"></Image>
       </div>
       <div className="font-sans text-2xl font-bold text-[#2B3674] dark:text-white uppercase text-center">

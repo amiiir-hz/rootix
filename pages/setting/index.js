@@ -4,8 +4,8 @@ import styles from "./swap.module.css";
 import BitLOgo from "../../public/assets/Cryptocurrency.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import ChangeBit from "../../components/changebit/changeBit";
-import fetchData from "../../components/fetchData/fetchdata";
+import Info from "@components/setting/Info";
+import fetchData from "@components/fetchData/fetchdata";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
 function Swap(props) {
@@ -29,82 +29,20 @@ function Swap(props) {
 
   const dataFetching = async () => {
     setIsLOading(true);
-    // const tradingData = await import('react-tradingview-widget');
-    // setTradingData(tradingData);
 
     const result = await fetchData("login", requestOptions);
     setIsLOading(false);
   };
   useEffect(() => {
-    // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-
     dataFetching();
   }, []);
 
-  // fetch("https://api.rootix.ae/api/v1/login", requestOptions)
-  //   .then(response => response.text())
-  //   .then(result => console.log(result))
-  //   .catch(error => console.log('error', error));
-  // useEffect(() => {
-  //   // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-
-  //   const data = import("react-tradingview-widget");
-  // }, []);
   return !isLoading ? (
     <div>
-      <div className={styles.swap__container_widget}>
+      <div className=" w-[97%] mx-auto pb-[70px]">
         <div className="flex flex-row h-full">
-          {/* <TradingViewWidget
-            symbol="NASDAQ:AAPL"
-            theme={Themes.DARK}
-            locale="fr"
-            autosize
-          /> */}
-          <ChangeBit />
+          <Info />
         </div>
-      </div>
-      <div
-        className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}
-      >
-        <div className="capitalize font-light text-2xl mt-11 ml-9">
-          recent activities
-        </div>
-        <table className="table-auto">
-          <thead>
-            <tr className=" flex flex-row px-9 mt-4">
-              <div className="capitalize text-lighter text-base w-1/4">
-                name
-              </div>
-              <div className="capitalize text-lighter text-base w-1/4">
-                price
-              </div>
-              <div className="capitalize text-lighter text-base  w-1/4">
-                exchamge
-              </div>
-              <div className="capitalize text-lighter text-base  w-1/4">
-                time
-              </div>
-            </tr>
-          </thead>
-          <tbody>
-            {/* <tr className=" flex flex-row px-9 mt-4">
-            <td className="w-1/4 flex flex-row ">
-              <div className=" w-8 h-8">
-                <Image src={BitLOgo} alt="avatar" className="w-8 h-8"></Image>
-              </div>
-              <div className="ml-2 font-normal text-base">Bitcoin BTC</div>
-            </td>
-            <td className="w-1/4  font-normal text-base">$40,796.55</td>
-            <td className="w-1/4  font-normal text-base text-red-500">0.002356</td>
-            <td className="w-1/4  font-normal text-base">6/22/2022 14:30</td>
-          </tr> */}
-            <TableItem />
-            <TableItem />
-            <TableItem />
-            <TableItem />
-            <TableItem />
-          </tbody>
-        </table>
       </div>
     </div>
   ) : (

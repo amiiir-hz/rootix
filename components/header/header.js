@@ -55,7 +55,7 @@ function Header(props) {
             </li>
           </ol>
         </nav>
-        <div className="capitalize text-4xl leading-10 tracking-tight text-[#2B3674] dark:text-white">
+        <div className="capitalize text-4xl leading-10 tracking-tight text-[#2B3674] dark:text-white mt-[2px]">
           {router.pathname.split("/")}
         </div>
       </div>
