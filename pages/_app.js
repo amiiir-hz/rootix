@@ -4,30 +4,18 @@ import store, { persistor } from "../redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { LanguageProvider } from "../context/LanguageContext";
-import dynamic from "next/dynamic";
+import PageContent from "../hooks/PageContent";
 
-// const LanguageProvider = dynamic(
-//   () => {
-//     return import("../context/LanguageContext");
-//   },
-//   { ssr: false }
-// );
 function MyApp({ Component, pageProps }) {
-  // if (typeof window === "undefined") {
-  //   global.window = {};
-  // }
-
-  // if (typeof document === "undefined") {
-  //   global.document = {};
-  // }
-
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <LanguageProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <PageContent>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </PageContent>
         </LanguageProvider>
       </PersistGate>
     </Provider>
