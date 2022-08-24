@@ -8,7 +8,7 @@ function Layout(props) {
   return (
     <div className="flex flex-col md:flex-row w-full justify-end h-full">
       <Dashboard />
-      <div className="flex flex-col w-screen md:w-[82%] h-full overflow-auto bg-white md:bg-[#F4F7FE] dark:bg-[#0B1437]">
+      <div className="flex flex-col w-screen md:w-[82%] overflow-auto bg-white md:bg-[#F4F7FE] dark:bg-[#0B1437]">
         <Header />
         <HeaderMobile />
 
