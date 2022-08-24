@@ -15,7 +15,7 @@ function Info() {
   } = useForm();
   return (
     <div>
-      <div className=" grid grid-cols-[200px_minmax(900px,_1fr)] gap-x-[41px] gap-y-[20px] items-center dark:text-white dark:opacity-80 mb-[40px]">
+      <div className=" grid grid-cols-[200px_minmax(900px,_1fr)] gap-x-[41px] gap-y-[20px] items-center dark:text-white text-black opacity-80 dark:opacity-100  mb-[40px]">
         <p className=" text-[20px] font-medium leading-[23px]">
           <Text tid="AccountName" />
         </p>

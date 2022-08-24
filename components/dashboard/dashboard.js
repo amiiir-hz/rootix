@@ -12,7 +12,7 @@ import Logo from "../../public/assets/logorootix [Recovered]-0۲ 1.png";
 function Dashboard(props) {
   return (
     <div
-      className={`rounded-3xl md:rounded-none mt-4 md:mt-0 md:w-72 w-screen md:h-screen bg-white dark:bg-[#111C44] md:h-auto drop-shadow-2xl md:drop-shadow-none fixed bottom-20 z-10 md:z-0 md:static`}
+      className={`rounded-3xl md:rounded-none mt-4 md:mt-0 md:w-[18%] w-screen md:h-screen bg-white dark:bg-[#111C44] md:h-auto drop-shadow-2xl md:drop-shadow-none fixed bottom-20 z-10 md:z-0 md:static`}
     >
       <div className="hidden md:block mx-auto w-20 h-20">
         <Image src={Logo} alt="sgh"></Image>
