@@ -2,10 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  height: 100%;
+  overflow: hidden;
 }
-
+#__next {
+  height: 100% !important;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -31,20 +35,20 @@ a {
 /* .dd{
   overflow-y: scroll
 } */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 10px;
   /* background-color: grey; */
 }
 
 /* Track */
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
+
 /* Handle */
-body::-webkit-scrollbar-thumb {
-  background: #6e7292; 
+*::-webkit-scrollbar-thumb {
+  background: #6e7292;
   border-radius: 10px;
 }
 @tailwind base;
@@ -85,8 +89,7 @@ input:checked ~ .collapsible-item-content {
 }
 
 input + .slider {
-  background-color: #d1d3d9 ;
-
+  background-color: #d1d3d9;
 }
 input:checked + .slider {
   background-color: #4318ff;
@@ -112,4 +115,3 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 38.57px;
 }
-
