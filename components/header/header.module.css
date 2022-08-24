@@ -1,10 +1,9 @@
-.header__container {
+/* .header__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* width: 80vw; */
-  }
+  } */
 .header__right_container {
   /* background-color: #111c44; */
   border-radius: 30px;

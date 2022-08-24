@@ -11,24 +11,26 @@ import Logo from "../../public/assets/logorootix [Recovered]-0۲ 1.png";
 
 function Dashboard(props) {
   return (
-    <div className={`w-72 h-screen bg-white dark:bg-[#111C44] h-auto`}>
-      <div className='mx-auto w-20 h-20'>
+    <div
+      className={`rounded-3xl md:rounded-none mt-4 md:mt-0 md:w-72 w-screen md:h-screen bg-white dark:bg-[#111C44] md:h-auto drop-shadow-2xl md:drop-shadow-none fixed bottom-20 z-10 md:z-0 md:static`}
+    >
+      <div className="hidden md:block mx-auto w-20 h-20">
         <Image src={Logo} alt="sgh"></Image>
       </div>
-      <div className="font-sans text-2xl font-bold text-[#2B3674] dark:text-white uppercase text-center">
+      <div className="hidden md:block font-sans text-2xl font-bold text-[#2B3674] dark:text-white uppercase text-center">
         rootix
       </div>
-      <hr className="mt-2 text-[#F4F7FE] " />
-      <div className="flex flex-col justify-center items-start mt-4">
+      <hr className="hidden md:block mt-2 text-[#F4F7FE] " />
+      <div className=" flex flex-row justify-around md:flex-col my-3 md:justify-center md:items-start md:mt-4 md:mb-0">
         {/* font-weight bold and border right on select */}
-        <div className=" mt-6 flex flex-row">
+        <div className=" md:mt-6 flex flex-row">
           {/* <div className="mx-auto w-5 h-5 mx-7">
             <Image src={HomeLOgo} alt="sgh"></Image>
           </div> */}
           <svg
             // width="20"
             // height="17"
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 20 17"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -39,15 +41,15 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
             dashboard
           </div>
         </div>
-        <div className=" mt-6 flex flex-row ">
+        <div className=" md:mt-6 flex flex-row ">
           <svg
             // width="21"
             // height="20"
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 21 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +59,13 @@ function Dashboard(props) {
               fill="currentColor"
             />
           </svg>
-          <div className="capitalize text-[#A3AED0] dark:text-white">swap</div>
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+            swap
+          </div>
         </div>
-        <div className=" mt-6 flex flex-row ">
+        <div className=" md:mt-6 flex flex-row ">
           <svg
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 18 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +76,13 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="capitalize text-[#A3AED0] dark:text-white">trade</div>
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+            trade
+          </div>
         </div>
-        <div className=" mt-6 flex flex-row ">
+        <div className=" md:mt-6 flex flex-row ">
           <svg
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 18 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -87,11 +93,13 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="capitalize text-[#A3AED0] dark:text-white">lists</div>
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+            lists
+          </div>
         </div>
-        <div className=" mt-6 flex flex-row ">
+        <div className=" md:mt-6 flex flex-row ">
           <svg
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 22 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -112,11 +120,13 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="capitalize text-[#A3AED0] dark:text-white">banks</div>
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+            banks
+          </div>
         </div>
-        <div className=" mt-6 flex flex-row ">
+        <div className=" md:mt-6 flex flex-row ">
           <svg
-            className="W-5 h-5 mx-auto mx-7 text-[#A3AED0] dark:text-white"
+            className="W-5 h-5 mx-auto md:mx-7 text-[#A3AED0] dark:text-white"
             viewBox="0 0 18 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +140,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
             tickets
           </div>
         </div>

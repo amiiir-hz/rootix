@@ -3,11 +3,11 @@ import React from "react";
 
 function Footer (props) {
     return(
-        <div className="flex flex-row justify-between">
-            <div className="font-medium text-sm leading-6 tracking-tight ml-6 w-30 text-zinc-400">
+        <div className="flex flex-col-reverse md:flex-row md:justify-between">
+            <div className="font-medium text-sm text-center leading-6 tracking-tight ml-6 w-30 text-zinc-400">
             © 2022 Hamed Izadi UI. All Rights Reserved. Made with love by Simmmple!
             </div>
-            <div className="flex flex-row text-center pr-6 capitalize">
+            <div className="flex flex-row justify-between text-center pr-6 capitalize">
                 <div className="font-medium text-sm leading-6 tracking-tight ml-6 w-30 text-zinc-400">
                 Marketplace
                 </div>
