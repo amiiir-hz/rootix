@@ -41,6 +41,7 @@ module.exports = {
         swipe: {
           50: "#111C44",
         },
+        "primary-dark": "rgba(0, 0, 0, 0.8)",
       },
       boxShadow: {
         basic: "1px 1px 10px rgba(0, 0, 0, 0.25)",

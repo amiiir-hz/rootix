@@ -11,5 +11,12 @@
   "googleauthenticatorinfo": "( By activating this option, in order to log in to your account in addition to your username and password, you must enter the one-time code that you received from the Google Authenticator application. )",
   "emailcode": "email code",
   "Verificationwithgoogleauthenticator": "Verification with google authenticator",
-  "Verificationwithemail": "Verification with email"
+  "Verificationwithemail": "Verification with email",
+  "Active": "Active",
+  "GoogleAuthenticatorregister": "register Google Authenticator",
+  "GoogleAuthenticatordisactive": "disactive Google Authenticator",
+  "GoogleAuthenticatorcode": "Google Authenticator code",
+  "personalAuthenticator": "Your personal authenticator code is equal to",
+  "acanpersonalAuthenticator": "Or you can add it to your authenticator by scanning the QR code below",
+  "confirm": "confirm"
 }
