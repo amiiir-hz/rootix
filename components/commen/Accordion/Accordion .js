@@ -14,7 +14,7 @@ function Accordion(props) {
             className=" opacity-0 absolute"
           />
           <label
-            className="collapsible-item-label text-[18px] leading-[29.88px] cursor-pointer font-medium flex justify-between text-primary-dark pr-[20px] pl-[17px] py-[17px]"
+            className="collapsible-item-label text-[18px] leading-[29.88px] cursor-pointer font-medium flex justify-between dark:text-white text-primary-dark pr-[20px] pl-[17px] py-[17px]"
             htmlFor={`tab-${props.id}`}
           >
             <Text tid={props.label} />

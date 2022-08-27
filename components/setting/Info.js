@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Tik from "@components/assets/svg/Tik";
 import Accordion from "@components/commen/Accordion/Accordion ";
 import { Text } from "@context/LanguageContext";
 import Toggle from "@components/commen/Toggle/Toggle";
 import { useForm, Controller } from "react-hook-form";
+import { BtnPrimary } from "@components/commen/Button";
+import { Modal } from "@components/commen/modal/Modal";
+import ActiveModal from "./modal/ActiveModal";
 
 function Info() {
   const {
@@ -13,6 +16,10 @@ function Info() {
     reset,
     formState: { errors, isSubmitted },
   } = useForm();
+  const [activemodal, setActivemodal] = useState(false);
+  const handleModal = () => {
+    setActivemodal(false);
+  };
   return (
     <div>
       <div className=" grid grid-cols-[200px_minmax(900px,_1fr)] gap-x-[41px] gap-y-[20px] items-center dark:text-white text-black opacity-80 dark:opacity-100  mb-[40px]">
@@ -66,6 +73,12 @@ function Info() {
                 <p>
                   <Text tid={item.text} />
                 </p>
+                <BtnPrimary
+                  className="font-medium text-[14px] py-[5px] px-[33px] ml-[19px]"
+                  onClick={() => setActivemodal(true)}
+                >
+                  <Text tid="Active" />
+                </BtnPrimary>
               </div>
               <div className=" flex items-center">
                 <Toggle
@@ -109,6 +122,9 @@ function Info() {
           </div>
         </Accordion>
       ))}
+      <Modal show={activemodal} closeModal={handleModal} className=" w-[50%]">
+        <ActiveModal close={handleModal} />
+      </Modal>
     </div>
   );
 }
