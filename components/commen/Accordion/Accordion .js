@@ -1,11 +1,11 @@
 import React from "react";
-// import arrow from "../../../Assets/Image/svg/arrowdown.svg";
 import { Text } from "@context/LanguageContext";
 import DownArrow from "@assets/svg/DownArrow";
+
 function Accordion(props) {
   return (
     <div className={`${props.className} Accordion`} key={props.id}>
-      <div className="dark:bg-gradient-to-r dark:from-[#111C44] dark:to-[#29323C] dark:text-white text-black mb-[16px] overflow-hidden rounded-[2px]">
+      <div className="dark:bg-[#111C44]  dark:text-white text-black mb-[16px] overflow-hidden rounded-[2px]">
         <div className="collapsible-item">
           <input
             type="checkbox"
@@ -18,7 +18,6 @@ function Accordion(props) {
           >
             <Text tid={props.label} />
             <DownArrow />
-            {/* <img src={arrow} alt={arrow} className=" w-[2rem] " /> */}
           </label>
           <div className="collapsible-item-content font-medium text-[14px]  leading-[24px]">
             {props.children}

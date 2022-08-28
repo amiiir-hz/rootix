@@ -41,7 +41,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             dashboard
           </div>
         </div>
@@ -59,7 +59,7 @@ function Dashboard(props) {
               fill="currentColor"
             />
           </svg>
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             swap
           </div>
         </div>
@@ -76,7 +76,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             trade
           </div>
         </div>
@@ -93,7 +93,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             lists
           </div>
         </div>
@@ -120,7 +120,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             banks
           </div>
         </div>
@@ -140,7 +140,7 @@ function Dashboard(props) {
             />
           </svg>
 
-          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white">
+          <div className="hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer">
             tickets
           </div>
         </div>

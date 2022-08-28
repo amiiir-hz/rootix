@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Info from "@components/setting/Info";
 import fetchData from "@components/fetchData/fetchdata";
-// import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
-function Swap(props) {
+
+function Setting(props) {
   const [isLoading, setIsLOading] = useState(false);
   const [tradingData, setTradingData] = useState(null);
 
@@ -49,4 +49,4 @@ function Swap(props) {
     <LoadingSpinner />
   );
 }
-export default Swap;
+export default Setting;
