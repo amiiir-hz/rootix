@@ -1,10 +1,8 @@
-// import Header from "../header";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import Dashboard from "../dashboard/dashboard";
 import HeaderMobile from "../header/headerMobile";
 function Layout(props) {
-
   return (
     <div className="flex flex-col md:flex-row w-100 justify-end h-auto overflow-y-scroll">
       <Dashboard/>
