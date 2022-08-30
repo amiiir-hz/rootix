@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 import { CloseCircleIcon } from "@assets/svg/CloseCircleIcon";
 import { Text } from "@context/LanguageContext";
-import QRCode from "react-qr-code";
 import DisactiveModal from "./DisactiveModal";
+import { useForm } from "react-hook-form";
+import { BtnSecondary } from "@components/commen/Button";
+import Inputs from "@components/commen/Input/Inputs";
+import { fetchData } from "@components/fetchData/fetchdata";
+
 var CryptoJS = require("crypto-js");
 
-function ActiveModal({ close }) {
+function ActiveModal({ close, data }) {
   const [active, setActive] = useState(false);
-  const [code, setCode] = useState(generate());
+  const [dataa, setDataa] = useState({});
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
+  const onSubmit = (item) => {
+    setDataa({
+      secret: data?.registration_data?.google2fa_secret,
+      type: "active",
+      one_time_password: item.one_time_password,
+    });
+    console.log("data :>> ", dataa);
+    fetchData(
+      "setting/change_confirmation_type",
+      {
+        secret: data?.registration_data?.google2fa_secret,
+        type: "active",
+        one_time_password: item.one_time_password,
+      },
+      "POST"
+    );
+  };
   return (
     <div className=" relative h-full">
       <button
@@ -28,13 +55,57 @@ function ActiveModal({ close }) {
           <div className="font-medium text-[14px] leading-[24px] mt-[12px]  text-justify">
             <p>
               <Text tid="personalAuthenticator" /> :
-              <span className="mx-[6px]">lajnxkjas</span>
+              <span className="mx-[6px]">
+                {data?.registration_data.google2fa_secret}
+              </span>
               <Text tid="acanpersonalAuthenticator" />
             </p>
           </div>
           <div className=" mt-[20px] text-center flex items-center justify-center">
-            <QRCode value={code} size="150" />
+            <img
+              className="card-img-top"
+              src={data?.QR_Image}
+              alt="Card image cap"
+            />
           </div>
+          <p className="font-medium text-[14px] leading-[24px] mt-[12px]  text-justify">
+            <Text tid="personalAuthenticatorregister" />
+          </p>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="mt-[20px] text-center dark:text-white text-black"
+          >
+            <Inputs
+              register={{
+                required: {
+                  value: true,
+                  message: "Enter code",
+                },
+              }}
+              type="text"
+              name="one_time_password"
+              control={control}
+              placeholder=""
+              label={<Text tid="GoogleAuthenticatorcode" />}
+              className="border-none  w-[50%] dark:bg-white dark:text-black bg-[#D1D3D9]  dark:placeholder-black  placeholder-white text-[14px] px-[12px] py-[5px] rounded-[2px] "
+            />
+            <Inputs
+              type="text"
+              name="type"
+              defaultValue={"active"}
+              control={control}
+              placeholder=""
+              label={""}
+              className="border-none h-0 disabled opacity-0  w-[50%] dark:bg-white dark:text-black bg-[#D1D3D9]  dark:placeholder-black  placeholder-white text-[14px] px-[12px] py-[5px] rounded-[2px] "
+            />
+
+            <BtnSecondary
+              className="font-medium text-[14px] py-[5px] px-[33px] mt-[20px]"
+              type={"submit"}
+            >
+              <Text tid="confirm" />
+            </BtnSecondary>
+          </form>
         </>
       ) : (
         <DisactiveModal />
@@ -44,14 +115,3 @@ function ActiveModal({ close }) {
 }
 
 export default ActiveModal;
-function generate() {
-  let strGenerate = "systemtime='" + "'";
-  let content = "___VBAR_CONFIG_V1.1.0___{" + strGenerate + "}";
-  content = content.replace(/(^\s*)|(\s*$)/g, "");
-
-  var contenthmacmd5 = CryptoJS.HmacMD5(content, "1234567887654321");
-  var contenthmacmd5base64 = CryptoJS.enc.Base64.stringify(contenthmacmd5);
-  strGenerate = content + "--" + contenthmacmd5base64;
-
-  return strGenerate;
-}

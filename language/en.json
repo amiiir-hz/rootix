@@ -18,5 +18,6 @@
   "GoogleAuthenticatorcode": "Google Authenticator code",
   "personalAuthenticator": "Your personal authenticator code is equal to",
   "acanpersonalAuthenticator": "Or you can add it to your authenticator by scanning the QR code below",
-  "confirm": "confirm"
+  "confirm": "confirm",
+  "personalAuthenticatorregister": "enter Authenticator code "
 }
