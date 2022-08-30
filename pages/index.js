@@ -9,6 +9,11 @@ export default function Home() {
       <Head>
         <title>rootix</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        {/* <link
+          href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+          rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> */}
       </Head>
     </div>
     // <form className="h-screen flex flex-col justify-center items-center">

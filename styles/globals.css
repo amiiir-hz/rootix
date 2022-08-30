@@ -4,12 +4,13 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
-  height: 100%;
-  overflow: hidden;
+  /* height: auto; */
+  min-height: 100%;
+  /* overflow-y: scroll; */
 }
-#__next {
+/* #__next {
   height: 100% !important;
-}
+} */
 a {
   color: inherit;
   text-decoration: none;
@@ -115,11 +116,8 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 38.57px;
 }
-
-/* select.minimal {
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
+/* .l{
+  min-height: 300px;
 } */
+
+
