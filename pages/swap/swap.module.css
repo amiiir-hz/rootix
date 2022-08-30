@@ -4,7 +4,7 @@
   display: flex;
   margin: 10px auto;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow: scroll;
   /* background-color: #111c44; */
   /* color: #e4e4e4; */
   font-weight: 300;
@@ -41,9 +41,8 @@
 
 .swap__container_widget {
   margin: 0px auto;
-
   width: 97%;
-  height: 50vh;
+  /* height: 380px; */
 }
 /* width */
 
