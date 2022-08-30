@@ -47,6 +47,7 @@ module.exports = {
         basic: "1px 1px 10px rgba(0, 0, 0, 0.25)",
         basiclight: "1px 2px 8px rgba(0, 0, 0, 0.13)",
       },
+
     },
   },
   variants: {

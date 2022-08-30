@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { BtnSecondary } from "@components/commen/Button";
 import Inputs from "@components/commen/Input/Inputs";
 import { fetchData } from "@components/fetchData/fetchdata";
+import Select from "@components/commen/Input/Select";
+import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
 
 var CryptoJS = require("crypto-js");
 
@@ -20,14 +22,9 @@ function ActiveModal({ close, data }) {
   } = useForm();
 
   const onSubmit = (item) => {
-    setDataa({
-      secret: data?.registration_data?.google2fa_secret,
-      type: "active",
-      one_time_password: item.one_time_password,
-    });
-    console.log("data :>> ", dataa);
+    console.log("data :>> ", item);
     fetchData(
-      "setting/change_confirmation_type",
+      "setting/status-google-authenticator",
       {
         secret: data?.registration_data?.google2fa_secret,
         type: "active",
