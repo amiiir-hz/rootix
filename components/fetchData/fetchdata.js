@@ -3,9 +3,9 @@ const fetchData = (url, options) => {
         // .then((response) => response.json())
         // .then((data) => data)
         // .catch((err) => err);
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(response => response.json())
+        .then((data) => data)
+        .catch(error => error);
       return data;
       // .then((response) => {
       //   if (response.status === 200) {
