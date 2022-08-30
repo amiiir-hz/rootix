@@ -12,7 +12,9 @@ function DisactiveModal() {
     control,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+
+  };
   return (
     <div>
       <div className=" text-[#f30a0a] text-[30px] w-[60px] h-[60px] mx-auto text-center flex items-center justify-center">
@@ -32,11 +34,11 @@ function DisactiveModal() {
               },
             }}
             type="text"
-            name="name"
+            name="one_time_password"
             control={control}
             placeholder=""
             label={<Text tid="GoogleAuthenticatorcode" />}
-            className="border-none  w-[50%] dark:bg-white bg-[#11047A]  dark:placeholder-black  placeholder-white text-[14px] px-[12px] py-[5px] rounded-[2px] "
+            className="border-none  w-[50%] dark:bg-white bg-[#D1D3D9]  dark:placeholder-black  placeholder-white text-[14px] px-[12px] py-[5px] rounded-[2px] "
           />
         </div>
         <BtnSecondary
