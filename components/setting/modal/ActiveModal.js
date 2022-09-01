@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { BtnSecondary } from "@components/commen/Button";
 import Inputs from "@components/commen/Input/Inputs";
 import { fetchData } from "@components/fetchData/fetchdata";
-import Select from "@components/commen/Input/Select";
 import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
 
 var CryptoJS = require("crypto-js");
@@ -22,7 +21,6 @@ function ActiveModal({ close, data }) {
   } = useForm();
 
   const onSubmit = (item) => {
-    console.log("data :>> ", item);
     fetchData(
       "setting/status-google-authenticator",
       {
@@ -43,7 +41,7 @@ function ActiveModal({ close, data }) {
           <CloseCircleIcon />
         </div>
       </button>
-      {!active ? (
+      {data?.user?.google_id === null ? (
         <>
           {" "}
           <h3 className=" text-[18px] leading-[29.88px] text-center font-medium dark:text-white text-primary-dark">
@@ -105,7 +103,7 @@ function ActiveModal({ close, data }) {
           </form>
         </>
       ) : (
-        <DisactiveModal />
+        <DisactiveModal data={data} />
       )}
     </div>
   );

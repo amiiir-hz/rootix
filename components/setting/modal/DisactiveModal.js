@@ -4,16 +4,25 @@ import DangerCircle from "@assets/svg/DangerCircle";
 import { Text } from "@context/LanguageContext";
 import Inputs from "@components/commen/Input/Inputs";
 import { BtnSecondary } from "@components/commen/Button";
+import { fetchData } from "@components/fetchData/fetchdata";
 
-function DisactiveModal() {
+function DisactiveModal({ data }) {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-
+  const onSubmit = (item) => {
+    fetchData(
+      "setting/status-google-authenticator",
+      {
+        secret: data?.registration_data?.google2fa_secret,
+        type: "deactivate",
+        one_time_password: item.one_time_password,
+      },
+      "POST"
+    );
   };
   return (
     <div>
