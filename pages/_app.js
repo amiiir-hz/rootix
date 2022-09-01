@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import Layout from "../components/layout/layout";
 import store, { persistor } from "../redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -17,9 +16,7 @@ function MyApp({ Component, pageProps }) {
         <PersistGate persistor={persistor}>
           <LanguageProvider>
             <PageContent>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
+              <Component {...pageProps} />
             </PageContent>
           </LanguageProvider>
         </PersistGate>

@@ -5,10 +5,11 @@ import BitLOgo from "../../public/assets/Cryptocurrency.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ChangeBit from "../../components/changebit/changeBit";
-import {fetchData} from "../../components/fetchData/fetchdata";
+import { fetchData } from "../../components/fetchData/fetchdata";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
+import Layout from "@components/layout/layout";
 
 const ReactViewWidget = dynamic(
   () => {
@@ -19,9 +20,9 @@ const ReactViewWidget = dynamic(
 
 function Swap(props) {
   const [isLoading, setIsLOading] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [tradingData, setTradingData] = useState(null);
-  const [swapTable, setSwapTable] = useState('');
+  const [swapTable, setSwapTable] = useState("");
 
   var myHeaders = new Headers();
   myHeaders.append("Accept", "application/json");
@@ -36,11 +37,11 @@ function Swap(props) {
   //   headers: myHeaders,
   //   redirect: "follow",
   // };
-//  const dataFetching = async () => {
-//     setIsLOading(true);
-//     const response = fetchData("setting").then((data) => setData(data.data));
-//     setIsLOading(false);
-//   };
+  //  const dataFetching = async () => {
+  //     setIsLOading(true);
+  //     const response = fetchData("setting").then((data) => setData(data.data));
+  //     setIsLOading(false);
+  //   };
   const dataFetching = async () => {
     setIsLOading(true);
     const result = fetchData("swap").then((data) => setSwapTable(data.data));
@@ -71,49 +72,50 @@ function Swap(props) {
   //   const data = import("react-tradingview-widget");
   // }, []);
   // if (theme === "light") {
-    
-  // }
-  return !isLoading ? (
-    <div>
-      <div className={`${styles.swap__container_widget} md:h-96`}>
-        <div className="flex flex-col-reverse md:flex-row h-full">
 
-          <ReactViewWidget
-            symbol="NASDAQ:AAPL"
-            theme={theme}
-            locale="en"
-            autosize
-            // className="h-100"
-            // height="md:h-full"
-          />
-          <ChangeBit />
-        </div>
-      </div>
-      <div
-        className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}
-      >
-        <div className="capitalize font-light text-2xl mt-11 ml-9">
-          recent activities
-        </div>
-        <table className="table-auto">
-          <thead>
-            <tr className="flex flex-row md:px-9 mt-4">
-              <div className="capitalize text-lighter text-base w-1/4">
-                name
-              </div>
-              <div className="capitalize text-lighter text-base w-1/4">
-                price
-              </div>
-              <div className="capitalize text-lighter text-base w-1/4">
-                exchamge
-              </div>
-              <div className="capitalize text-lighter text-base w-1/4">
-                time
-              </div>
-            </tr>
-          </thead>
-          <tbody>
-            {/* <tr className=" flex flex-row px-9 mt-4">
+  // }
+  return (
+    <Layout>
+      {!isLoading ? (
+        <div>
+          <div className={`${styles.swap__container_widget} md:h-96`}>
+            <div className="flex flex-col-reverse md:flex-row h-full">
+              <ReactViewWidget
+                symbol="NASDAQ:AAPL"
+                theme={theme}
+                locale="en"
+                autosize
+                // className="h-100"
+                // height="md:h-full"
+              />
+              <ChangeBit />
+            </div>
+          </div>
+          <div
+            className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}
+          >
+            <div className="capitalize font-light text-2xl mt-11 ml-9">
+              recent activities
+            </div>
+            <table className="table-auto">
+              <thead>
+                <tr className="flex flex-row md:px-9 mt-4">
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    name
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    price
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    exchamge
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    time
+                  </div>
+                </tr>
+              </thead>
+              <tbody>
+                {/* <tr className=" flex flex-row px-9 mt-4">
             <td className="w-1/4 flex flex-row ">
               <div className=" w-8 h-8">
                 <Image src={BitLOgo} alt="avatar" className="w-8 h-8"></Image>
@@ -124,17 +126,19 @@ function Swap(props) {
             <td className="w-1/4  font-normal text-base text-red-500">0.002356</td>
             <td className="w-1/4  font-normal text-base">6/22/2022 14:30</td>
           </tr> */}
-            <TableItem />
-            <TableItem />
-            <TableItem />
-            <TableItem />
-            <TableItem />
-          </tbody>
-        </table>
-      </div>
-    </div>
-  ) : (
-    <LoadingSpinner />
+                <TableItem />
+                <TableItem />
+                <TableItem />
+                <TableItem />
+                <TableItem />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ) : (
+        <LoadingSpinner />
+      )}{" "}
+    </Layout>
   );
 }
 export default Swap;

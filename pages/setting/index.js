@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Info from "@components/setting/Info";
 import { fetchData } from "@components/fetchData/fetchdata";
 import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
+import Layout from "@components/layout/layout";
 
 function Setting(props) {
   const [isLoading, setIsLOading] = useState(false);
@@ -15,7 +16,6 @@ function Setting(props) {
       .then((data) => setData(data?.data))
       .catch((error) => {
         console.log("error :>> ", error);
-       
       });
 
     setIsLOading(false);
@@ -24,16 +24,20 @@ function Setting(props) {
     dataFetching();
   }, []);
   console.log("data :>> ", data);
-  return !isLoading ? (
-    <div>
-      <div className=" w-[97%] mx-auto pb-[70px]">
-        <div className="flex flex-row h-full">
-          <Info data={data} />
+  return (
+    <Layout>
+      {!isLoading ? (
+        <div>
+          <div className=" w-[97%] mx-auto pb-[70px]">
+            <div className="flex flex-row h-full">
+              <Info data={data} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  ) : (
-    <LoadingSpinner />
+      ) : (
+        <LoadingSpinner />
+      )}
+    </Layout>
   );
 }
 export default Setting;
