@@ -9,7 +9,7 @@ function Index() {
   console.log("size", size);
   return (
     <section
-      className={`p-0 bg-[#E5E5E5] h-[100vh] w-full text-right overflow-hidden relative`}
+      className={`p-0 bg-[#FFFFFF] h-[100vh] w-full text-right overflow-hidden relative`}
     >
       <Login />
       <div className=" absolute right-0 top-0 z-10 h-full 2xl:w-[40%]  test">

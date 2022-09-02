@@ -10,6 +10,18 @@ function BtnPrimary({ children, className, onClick, type }) {
   );
 }
 export { BtnPrimary };
+function BtnPrimarylight({ children, className, onClick, type }) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      className={` text-white  bg-[#4318FF]  rounded-[16px] focus:outline-none ${className}`}
+    >
+      {children}
+    </button>
+  );
+}
+export { BtnPrimarylight };
 function BtnRed({ children, className, onClick, type }) {
   return (
     <button
