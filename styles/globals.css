@@ -124,3 +124,6 @@ p {
   word-break: break-all;
 }
 
+.test span {
+  height: 100% !important;
+}
