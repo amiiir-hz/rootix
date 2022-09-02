@@ -120,9 +120,9 @@ input:checked + .slider:before {
   min-height: 300px;
 } */
 
-p {
+/* p {
   word-break: break-all;
-}
+} */
 
 .test span {
   height: 100% !important;
