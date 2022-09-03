@@ -1,4 +1,4 @@
-function BtnPrimary({ children, className, onClick, type,disabled }) {
+function BtnPrimary({ children, className, onClick, type, disabled }) {
   return (
     <button
       type={type}
@@ -23,7 +23,7 @@ function BtnPrimarylight({ children, className, onClick, type }) {
   );
 }
 export { BtnPrimarylight };
-function BtnRed({ children, className, onClick, type }) {
+function BtnRed({ children, className, onClick, type, disabled }) {
   return (
     <button
       type={type}
@@ -37,7 +37,7 @@ function BtnRed({ children, className, onClick, type }) {
 }
 export { BtnRed };
 
-function BtnSecondary({ children, className, onClick, type,disabled }) {
+function BtnSecondary({ children, className, onClick, type, disabled }) {
   return (
     <button
       type={type}
