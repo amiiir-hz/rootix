@@ -1,6 +1,7 @@
-import React from "react";
-import Select from "@components/commen/Input/select";
-import {components} from "react-select";
+import React, { useState } from "react";
+// import Select from "@components/commen/Input/select";
+import IconSelect from "@components/commen/Input/IconSelect";
+import Select, { components } from "react-select";
 
 // import styles from "./bitField.module.css";
 import Image from "next/image";
@@ -18,42 +19,111 @@ function BitField(props) {
     console.log(data);
   };
   const { Option } = components;
-const IconOption = props => (
-  <Option {...props}>
-    <img
-      src={BitLOgo1}
-      style={{ width: 36 }}
-      alt='hghc'
-    />
-    bitField
-  </Option>
-);
+  const IconOption = (props) => (
+    <Option {...props}>
+      <img src={BitLOgo1} style={{ width: 36 }} alt="hghc" />
+      bitField
+    </Option>
+  );
+  // The label supports JSX.
+  const options = [
+    {
+      value: "chocolate",
+      label: (
+        <div>
+          <img
+            className="card-img-top"
+            src={"/assets/bitcoin-logo-svgrepo-com.svg"}
+            alt="Card image cap"
+          />{" "}
+          Chocolate
+        </div>
+      ),
+    },
+    {
+      value: "strawberry",
+      label: (
+        <div>
+          <img
+            className="card-img-top"
+            src={"/assets/bitcoin-logo-svgrepo-com.svg"}
+            alt="Card image cap"
+          />{" "}
+          Strawberry
+        </div>
+      ),
+    },
+    {
+      value: "vanilla",
+      label: (
+        <div>
+          <img
+            className="card-img-top"
+            src={"/assets/bitcoin-logo-svgrepo-com.svg"}
+            alt="Card image cap"
+          />{" "}
+          Vanilla
+        </div>
+      ),
+    },
+  ];
   return (
     <div className="dark:bg-[#111C44] rounded-lg border-grey-400 w-full flex felx-row shadow-lg">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mt-[20px] text-center dark:text-white text-black"
       >
-        <Select 
-        control={control}
-        name='name'
-        register={{
-          required: {
+        {/* <Select
+          control={control}
+          name="name"
+          register={{
+            required: {
               value: false,
               // message: "Enter Name",
-          },
-      }}         components={{ Option: IconOption }}
-      >
-          <option value="bitcoin">
-            {/* <Image src={BitLOgo1} alt="some thhing"></Image> */}
+            },
+          }}
+          className="dark:bg-gray-800  text-black bg-white border rounded-lg  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10"
+        >
+          <option
+            value="bitcoin"
+            data-icon="glyphicon glyphicon-eye-open"
+            data-subtext="petrification"
+          >
+            <div>
+              <img
+                className="card-img-top"
+                src={"/assets/bitcoin-logo-svgrepo-com.svg"}
+                alt="Card image cap"
+              />
+              <p>bitcoin</p>
+            </div>
+          </option>
+          <option
+            value="bitcoin1"
+            data-icon="glyphicon glyphicon-eye-open"
+            data-subtext="petrification"
+          >
             bitcoin
           </option>
-          <option value="bitcoin">
-            {/* <Image src={BitLOgo1} alt="some thhing"></Image> */}
+          <option
+            value="bitcoin2"
+            data-icon="glyphicon glyphicon-eye-open"
+            data-subtext="petrification"
+          >
             bitcoin
           </option>
-        </Select>
-
+        </Select> */}
+        <IconSelect
+          control={control}
+          name="name"
+          register={{
+            required: {
+              value: false,
+              // message: "Enter Name",
+            },
+          }}
+          options={options}
+        />
         <input
           type="number"
           name="bitValue"

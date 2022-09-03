@@ -13,6 +13,7 @@
   "Verificationwithgoogleauthenticator": "Verification with google authenticator",
   "Verificationwithemail": "Verification with email",
   "Active": "Active",
+  "deactivate": "deactivate",
   "GoogleAuthenticatorregister": "register Google Authenticator",
   "GoogleAuthenticatordisactive": "disactive Google Authenticator",
   "GoogleAuthenticatorcode": "Google Authenticator code",

@@ -12,6 +12,7 @@ function PageContent(props) {
   const styles = {
     direction: userLanguage === "fa" ? "rtl " : "ltr",
     height: "100%",
+    overflowX: "hidden",
   };
   return <div style={styles}>{props.children}</div>;
 }
