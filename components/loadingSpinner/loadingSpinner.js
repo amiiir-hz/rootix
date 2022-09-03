@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./loadingSpinner.module.css";
 
-function LoadingSpinner() {
+function LoadingSpinner({ className, size }) {
   return (
-    <div className={styles.spinner_container}>
-      <div className={styles.loading_spinner}></div>
+    <div className={`flex justify-center ${className} `}>
+      <div className={`${styles.loading_spinner} ${size}`}></div>
     </div>
   );
 }

@@ -13,11 +13,14 @@
   "Verificationwithgoogleauthenticator": "Verification with google authenticator",
   "Verificationwithemail": "Verification with email",
   "Active": "Active",
+  "deactivate": "deactivate",
   "GoogleAuthenticatorregister": "register Google Authenticator",
   "GoogleAuthenticatordisactive": "disactive Google Authenticator",
   "GoogleAuthenticatorcode": "Google Authenticator code",
   "personalAuthenticator": "Your personal authenticator code is equal to",
   "acanpersonalAuthenticator": "Or you can add it to your authenticator by scanning the QR code below",
   "confirm": "confirm",
-  "personalAuthenticatorregister": "برای ثبت اتنتیکیتور خود باید نرم افزار google authenticator را در تلفن همراه خود نصب نمایید، بعد از اسکن بارکد کد اتنتیکیتور را وارد نمایید"
+  "personalAuthenticatorregister": "برای ثبت اتنتیکیتور خود باید نرم افزار google authenticator را در تلفن همراه خود نصب نمایید، بعد از اسکن بارکد کد اتنتیکیتور را وارد نمایید",
+  "email": "ایمیل ",
+  "Password": "رمز عبور "
 }

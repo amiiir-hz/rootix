@@ -6,10 +6,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ChangeBit from "../../components/changebit/changeBit";
 import { fetchData } from "../../components/fetchData/fetchdata";
-import fetchDataj from "@components/fetchData/fetchDataj";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
+import Layout from "@components/layout/layout";
 
 const ReactViewWidget = dynamic(
   () => {
@@ -22,7 +22,7 @@ function Swap(props) {
   const [isLoading, setIsLOading] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [tradingData, setTradingData] = useState(null);
-  const [swapTable, setSwapTable] = useState([]);
+  const [swapTable, setSwapTable] = useState("");
 
   // var myHeaders = new Headers();
   // myHeaders.append("Accept", "application/json");
@@ -70,11 +70,16 @@ function Swap(props) {
     "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWM5ZmU5MDhhMDdmZmFhMWRiYmExNDdiYTFiZjE5ZjI0Y2VhM2Q0Yzg2MDlhMmFmOTRhNTA3NThkNmM0YjZhYWM0YTkyZDQ3ZjhlMjQ1NjgiLCJpYXQiOjE2NjIwMTc2NzYuOTYzMDQ5LCJuYmYiOjE2NjIwMTc2NzYuOTYzMDUxLCJleHAiOjE2OTM1NTM2NzYuOTYxNjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.qXGYIcFfkMtHJUwGfKUnpaUIpYkrU0M4aKF858r1yUgaRf_w1eBKa0iZRC9T4vWSDK7nUKd4P3bhZnEnPDng_G5fuK2ZC-Cm8RpPmTYGmdj4TKZBZittuS0UQDQ93HsV0fh_arQYpnYb6l4X_dkyZiVuQ8Taw3Yi3rXxk3c1AzZnp6N45A9b-4s7YaYTraTGefJNx-IlH89P5bTMQm3kBnQPkh4DI6Y7_hb1LU_v3DifS1dY6cYvqAdQlQDZDOAcmw_fv9n9ywThoeUcC2a6Yzn5jFN0rQXov82II_VO-ijb8BeLNCu9yqeEYCYp3Vz5tCY0rWja3CevJsBumoxPh-nfDoIZv71_M00G2umKEmOoam67Rh-8KEN7_lFAn4v0UwqZSmQCL2Nw4mk81FSXWfDyMjRqEq16IQMYvduOeqRMHklfiFg9ADJ1cno-jIV2J1iLjHbz6KiZXGIjG7T_bSpnzaJTWwwR4eeEZQLJpR0yIXs4zCXaeOQ6aawHsuITrCsg_LsESLyTjDt9QDyKHHuxEn_9wD6TZ_rQsMuRW_VB9AcwG44zXc3P62O_Qk-exER1XvbBrJE-cvQ0LuO6TEJG71DNg3F5mmgbk1d20BDVzO8hG5VNxKdJF0gNDA1CDQlLHHg9T5MG4o6LI1mtwWVzPK8KhVCkNOKT1vA6SwU"
   );
 
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
+  // var requestOptions = {
+  //   method: "GET",
+  //   headers: myHeaders,
+  //   redirect: "follow",
+  // };
+  //  const dataFetching = async () => {
+  //     setIsLOading(true);
+  //     const response = fetchData("setting").then((data) => setData(data.data));
+  //     setIsLOading(false);
+  //   };
   const dataFetching = async () => {
     setIsLOading(true);
 
@@ -126,54 +131,79 @@ function Swap(props) {
   //   dataFetching();
   //   console.log(swapTable);
   // }, []);
-  return !isLoading ? (
-    <div>
-      <div className={`${styles.swap__container_widget} md:h-96`}>
-        <div className="flex flex-col-reverse md:flex-row h-full">
-          <div className="w-full">
-            <ReactViewWidget
-              symbol="NASDAQ:AAPL"
-              theme={theme}
-              locale="en"
-              autosize
-              // className="h-100"
-              // height="md:h-full"
-            />
+  // if (theme === "light") {
+
+  // }
+  return (
+    <Layout>
+      {!isLoading ? (
+        <div>
+          <div className={`${styles.swap__container_widget} md:h-96`}>
+            <div className="flex flex-col-reverse md:flex-row h-full">
+              <ReactViewWidget
+                symbol="NASDAQ:AAPL"
+                theme={theme}
+                locale="en"
+                autosize
+                // className="h-100"
+                // height="md:h-full"
+              />
+              <ChangeBit />
+            </div>
           </div>
-          <ChangeBit />
+          <div
+            className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}
+          >
+            <div className="capitalize font-light text-2xl mt-11 ml-9">
+              recent activities
+            </div>
+            <table className="table-auto">
+              <thead>
+                <tr className="flex flex-row md:px-9 mt-4">
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    name
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    price
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    exchamge
+                  </div>
+                  <div className="capitalize text-lighter text-base w-1/4">
+                    time
+                  </div>
+                </tr>
+              </thead>
+              <tbody>
+                {/* <tr className=" flex flex-row px-9 mt-4">
+            <td className="w-1/4 flex flex-row ">
+              <div className=" w-8 h-8">
+                <Image src={BitLOgo} alt="avatar" className="w-8 h-8"></Image>
+              </div>
+              <div className="ml-2 font-normal text-base">Bitcoin BTC</div>
+            </td>
+            <td className="w-1/4  font-normal text-base">$40,796.55</td>
+            <td className="w-1/4  font-normal text-base text-red-500">0.002356</td>
+            <td className="w-1/4  font-normal text-base">6/22/2022 14:30</td>
+          </tr> */}
+                <TableItem />
+                <TableItem />
+                <TableItem />
+                <TableItem />
+                <TableItem />
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div
-        className={`${styles.swap__container_first}  bg-white text-black shadow-lg rounded-md dark:bg-[#111c44] dark:text-[#e4e4e4]`}
-      >
-        <div className="capitalize font-light text-2xl mt-11 ml-9">
-          recent activities
-        </div>
-        <table className="table-auto">
-          <thead>
-            <tr className="flex flex-row md:px-9 mt-4">
-              <div className="capitalize text-lighter text-base w-1/4">
-                name
-              </div>
-              <div className="capitalize mx-2 text-lighter text-base w-1/4">
-                price
-              </div>
-              <div className="capitalize mx-2 text-lighter text-base w-1/4">
-                exchamge
-              </div>
-              <div className="capitalize text-lighter text-base w-1/4">
-                time
-              </div>
-            </tr>
-          </thead>
-          <tbody>
-            <TableItem items={swapTable} />
-          </tbody>
-        </table>
-      </div>
-    </div>
-  ) : (
-    <LoadingSpinner />
+      ) : (
+        <LoadingSpinner
+          className={
+            "absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          }
+          size="w-[100px] h-[100px]"
+        />
+      )}{" "}
+    </Layout>
   );
 }
 export default Swap;

@@ -10,6 +10,7 @@ const Inputs = ({
   control,
   register,
   className,
+  classNamedir,
   label,
   absolute,
   full,
@@ -29,16 +30,19 @@ const Inputs = ({
   return (
     <div
       className={classNames({
-        "w-full flex flex-col items-start justify-center": `${full}flex flex-col items-start justify-center`,
+        "w-full flex flex-col items-start justify-center": `flex flex-col items-start justify-center ${full}`,
       })}
     >
-      {label ? <label className="mb-[20px]">{label} :</label> : null}
+      {label ? (
+        <label className={`mb-[20px] ${classNamedir}`}>{label}</label>
+      ) : null}
       <input
         type="text"
-        className={classNames(` outline-0 ${className}`, {
+        className={classNames(` outline-0  ${className}`, {
           disabled: isDisabled,
         })}
-        checked={isChecked}
+        autoFocus
+        autoComplete="off"
         {...field}
         {...rest}
       />

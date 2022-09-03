@@ -4,7 +4,7 @@ import Accordion from "@components/commen/Accordion/Accordion ";
 import { Text } from "@context/LanguageContext";
 import Toggle from "@components/commen/Toggle/Toggle";
 import { useForm, Controller } from "react-hook-form";
-import { BtnPrimary } from "@components/commen/Button";
+import { BtnPrimary, BtnRed } from "@components/commen/Button";
 import { Modal } from "@components/commen/modal/Modal";
 import ActiveModal from "./modal/ActiveModal";
 
@@ -24,28 +24,28 @@ function Info({ data }) {
   // console.log("data :>> ", data?.data);
 
   return (
-    <div>
-      <div className=" grid grid-cols-[200px_minmax(900px,_1fr)] gap-x-[41px] gap-y-[20px] items-center dark:text-white text-black opacity-80 dark:opacity-100  mb-[40px]">
-        <p className=" text-[20px] font-medium leading-[23px]">
+    <div className=" w-full">
+      <div className=" grid md:grid-cols-[0.8fr_minmax(900px,_1fr)] grid-cols-[0.8fr_minmax(200px,_1fr)] md:gap-x-[41px] gap-x-[0px] gap-y-[20px] items-center dark:text-white text-black opacity-80 dark:opacity-100  mb-[40px] ">
+        <p className=" text-[20px] font-medium leading-[23px] break-words">
           <Text tid="AccountName" />
         </p>
-        <p className=" text-[18px] font-normal leading-[21px]">
+        <p className=" text-[18px] font-normal leading-[21px] break-words">
           hamed-izadi1325{" "}
         </p>
-        <p className=" text-[20px] font-medium leading-[23px]">
+        <p className=" text-[20px] font-medium leading-[23px] break-words">
           Contact Email:
         </p>
-        <p className=" text-[18px] font-normal leading-[21px]">
+        <p className=" text-[18px] font-normal leading-[21px] break-words">
           hamizadi@gmail.com
         </p>
-        <p className=" text-[20px] font-medium leading-[23px]">
+        <p className=" text-[20px] font-medium leading-[23px] break-words">
           athenticate Status:
         </p>
-        <p className=" text-[18px] font-normal leading-[21px]">step 3</p>
-        <p className=" text-[20px] font-medium leading-[23px]">
+        <p className=" text-[18px] font-normal leading-[21px] break-words">step 3</p>
+        <p className=" text-[20px] font-medium leading-[23px] break-words" >
           Security Status:
         </p>
-        <p className=" text-[18px] font-normal leading-[21px] flex items-center">
+        <p className=" w-11/12 text-[18px] font-normal leading-[21px] flex items-center break-words break-all">
           <span className="text-[#35D659] mr-[3px]">
             <Tik />
           </span>{" "}
@@ -57,7 +57,7 @@ function Info({ data }) {
           label={item.title}
           id={id}
           key={id}
-          className=" w-5/12 dark:shadow-basic shadow-basiclight"
+          className=" md:w-[50%] w-full dark:shadow-basic shadow-basiclight"
         >
           {id === 1 ? (
             <div>
@@ -76,13 +76,20 @@ function Info({ data }) {
                 <p>
                   <Text tid={item.text} />
                 </p>
-                {data?.user?.google_id === null && (
+                {data?.user?.google_id === null ? (
                   <BtnPrimary
                     className="font-medium text-[14px] py-[5px] px-[33px] ml-[19px]"
                     onClick={() => setActivemodal(true)}
                   >
                     <Text tid="Active" />
                   </BtnPrimary>
+                ) : (
+                  <BtnRed
+                    className="font-medium text-[14px] py-[5px] px-[33px] ml-[19px]"
+                    onClick={() => setActivemodal(true)}
+                  >
+                    <Text tid="disActive" />
+                  </BtnRed>
                 )}
               </div>
               <div className=" flex items-center">

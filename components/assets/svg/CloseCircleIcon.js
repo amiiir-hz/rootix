@@ -16,3 +16,4 @@ export const CloseCircleIcon = (props) => {
     </svg>
   );
 };
+

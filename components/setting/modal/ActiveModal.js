@@ -6,14 +6,13 @@ import { useForm } from "react-hook-form";
 import { BtnSecondary } from "@components/commen/Button";
 import Inputs from "@components/commen/Input/Inputs";
 import { fetchData } from "@components/fetchData/fetchdata";
-import Select from "@components/commen/Input/Select";
 import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
 
 var CryptoJS = require("crypto-js");
 
 function ActiveModal({ close, data }) {
-  const [active, setActive] = useState(false);
-  const [dataa, setDataa] = useState({});
+  const [load, setLoad] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -22,7 +21,7 @@ function ActiveModal({ close, data }) {
   } = useForm();
 
   const onSubmit = (item) => {
-    console.log("data :>> ", item);
+    setLoad((perv) => !perv);
     fetchData(
       "setting/status-google-authenticator",
       {
@@ -31,7 +30,7 @@ function ActiveModal({ close, data }) {
         one_time_password: item.one_time_password,
       },
       "POST"
-    );
+    ).finally(setLoad((perv) => !perv));
   };
   return (
     <div className=" relative h-full">
@@ -43,7 +42,7 @@ function ActiveModal({ close, data }) {
           <CloseCircleIcon />
         </div>
       </button>
-      {!active ? (
+      {data?.user?.google_id === null ? (
         <>
           {" "}
           <h3 className=" text-[18px] leading-[29.88px] text-center font-medium dark:text-white text-primary-dark">
@@ -97,15 +96,20 @@ function ActiveModal({ close, data }) {
             />
 
             <BtnSecondary
+              disabled={load}
               className="font-medium text-[14px] py-[5px] px-[33px] mt-[20px]"
               type={"submit"}
             >
-              <Text tid="confirm" />
+              {load ? (
+                <LoadingSpinner className={""} size="w-[20px] h-[20px]" />
+              ) : (
+                <Text tid="confirm" />
+              )}
             </BtnSecondary>
           </form>
         </>
       ) : (
-        <DisactiveModal />
+        <DisactiveModal data={data} />
       )}
     </div>
   );

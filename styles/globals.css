@@ -120,3 +120,17 @@ input:checked + .slider:before {
   min-height: 300px;
 } */
 
+/* p {
+  word-break: break-all;
+} */
+
+.test span {
+  height: 100% !important;
+}
+
+.loginForm input:-webkit-autofill,
+.loginForm input:-webkit-autofill:hover,
+.loginForm input:-webkit-autofill:focus,
+.loginForm input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
