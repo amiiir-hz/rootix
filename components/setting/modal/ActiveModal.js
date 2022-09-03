@@ -11,8 +11,8 @@ import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
 var CryptoJS = require("crypto-js");
 
 function ActiveModal({ close, data }) {
-  const [active, setActive] = useState(false);
-  const [dataa, setDataa] = useState({});
+  const [load, setLoad] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -21,6 +21,7 @@ function ActiveModal({ close, data }) {
   } = useForm();
 
   const onSubmit = (item) => {
+    setLoad((perv) => !perv);
     fetchData(
       "setting/status-google-authenticator",
       {
@@ -29,7 +30,7 @@ function ActiveModal({ close, data }) {
         one_time_password: item.one_time_password,
       },
       "POST"
-    );
+    ).finally(setLoad((perv) => !perv));
   };
   return (
     <div className=" relative h-full">
@@ -95,10 +96,15 @@ function ActiveModal({ close, data }) {
             />
 
             <BtnSecondary
+              disabled={load}
               className="font-medium text-[14px] py-[5px] px-[33px] mt-[20px]"
               type={"submit"}
             >
-              <Text tid="confirm" />
+              {load ? (
+                <LoadingSpinner className={""} size="w-[20px] h-[20px]" />
+              ) : (
+                <Text tid="confirm" />
+              )}
             </BtnSecondary>
           </form>
         </>

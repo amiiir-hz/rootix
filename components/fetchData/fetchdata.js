@@ -31,14 +31,14 @@ export const fetchData = async (url, data, method = "GET") => {
 
   try {
     let result = await sendRequest(url, token, data, method);
-    if (result.status !== 200) {
-      Swal.fire({
-        title: "Error!",
-        text: result.status,
-        icon: "error",
-        confirmButtonText: "ok",
-      });
-    }
+    // if (result.status !== 200) {
+    //   Swal.fire({
+    //     title: "Error!",
+    //     text: result.status,
+    //     icon: "error",
+    //     confirmButtonText: "ok",
+    //   });
+    // }
 
     const response = await result.json();
     return response;
