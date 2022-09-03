@@ -4,7 +4,8 @@
   display: flex;
   margin: 10px auto;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: auto;
   /* background-color: #111c44; */
   /* color: #e4e4e4; */
   font-weight: 300;

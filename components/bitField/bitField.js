@@ -18,24 +18,26 @@ function BitField(props) {
   const onSubmit = (data) => {
     console.log(data);
   };
-  const { Option } = components;
-  const IconOption = (props) => (
-    <Option {...props}>
-      <img src={BitLOgo1} style={{ width: 36 }} alt="hghc" />
-      bitField
-    </Option>
-  );
+  // const { Option } = components;
+  // const IconOption = (props) => (
+  //   <Option {...props}>
+  //     <img src={BitLOgo1} style={{ width: 36 }} alt="hghc" />
+  //     bitField
+  //   </Option>
+  // );
   // The label supports JSX.
   const options = [
     {
       value: "chocolate",
       label: (
-        <div>
+        <div className="flex flex-row justify-between">
           <img
-            className="card-img-top"
+            // className="card-img-top"
+            width={24}
+            height={24}
             src={"/assets/bitcoin-logo-svgrepo-com.svg"}
             alt="Card image cap"
-          />{" "}
+          />
           Chocolate
         </div>
       ),
@@ -43,12 +45,14 @@ function BitField(props) {
     {
       value: "strawberry",
       label: (
-        <div>
+        <div className="flex flex-row justify-between">
           <img
-            className="card-img-top"
+            width={24}
+            height={24}
+            // className="card-img-top"
             src={"/assets/bitcoin-logo-svgrepo-com.svg"}
             alt="Card image cap"
-          />{" "}
+          />
           Strawberry
         </div>
       ),
@@ -56,9 +60,11 @@ function BitField(props) {
     {
       value: "vanilla",
       label: (
-        <div>
+        <div className="flex flex-row justify-between">
           <img
-            className="card-img-top"
+            width={24}
+            height={24}
+            // className="card-img-top"
             src={"/assets/bitcoin-logo-svgrepo-com.svg"}
             alt="Card image cap"
           />{" "}
@@ -69,10 +75,10 @@ function BitField(props) {
   ];
   return (
     <div className="dark:bg-[#111C44] rounded-lg border-grey-400 w-full flex felx-row shadow-lg">
-      <form
+      {/* <form
         onSubmit={handleSubmit(onSubmit)}
         className="mt-[20px] text-center dark:text-white text-black"
-      >
+      > */}
         {/* <Select
           control={control}
           name="name"
@@ -122,6 +128,7 @@ function BitField(props) {
               // message: "Enter Name",
             },
           }}
+          className="dark:bg-gray-800 text-black bg-white rounded-lg -mt-8  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10"
           options={options}
         />
         <input
@@ -133,8 +140,8 @@ function BitField(props) {
           step={0.01}
           className="bg-inherit border-none focus:border-0 h-10 rounded-lg"
         />
-        <button type="submit">click me</button>
-      </form>
+        {/* <button type="submit">click me</button> */}
+      {/* </form> */}
       {/* <select className="dark:bg-gray-800 text-black bg-white border rounded-lg  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10">
         <option className="flex flex-row ">
           <svg
