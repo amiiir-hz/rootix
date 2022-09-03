@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import DangerCircle from "@assets/svg/DangerCircle";
 import { Text } from "@context/LanguageContext";
 import Inputs from "@components/commen/Input/Inputs";
 import { BtnSecondary } from "@components/commen/Button";
 import { fetchData } from "@components/fetchData/fetchdata";
+import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
 
 function DisactiveModal({ data }) {
+  const [load, setLoad] = useState(false);
   const {
     register,
     handleSubmit,
@@ -14,6 +16,7 @@ function DisactiveModal({ data }) {
     formState: { errors },
   } = useForm();
   const onSubmit = (item) => {
+    setLoad((perv) => !perv);
     fetchData(
       "setting/status-google-authenticator",
       {
@@ -22,8 +25,9 @@ function DisactiveModal({ data }) {
         one_time_password: item.one_time_password,
       },
       "POST"
-    );
+    ).finally(setLoad((perv) => !perv));
   };
+
   return (
     <div>
       <div className=" text-[#f30a0a] text-[30px] w-[60px] h-[60px] mx-auto text-center flex items-center justify-center">
@@ -51,10 +55,15 @@ function DisactiveModal({ data }) {
           />
         </div>
         <BtnSecondary
+          disabled={load}
           className="font-medium text-[14px] py-[5px] px-[33px] mt-[20px]"
           type={"submit"}
         >
-          <Text tid="confirm" />
+          {load ? (
+            <LoadingSpinner className={""} size="w-[20px] h-[20px]" />
+          ) : (
+            <Text tid="confirm" />
+          )}
         </BtnSecondary>
       </form>
     </div>

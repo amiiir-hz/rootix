@@ -35,7 +35,12 @@ function Setting(props) {
           </div>
         </div>
       ) : (
-        <LoadingSpinner />
+        <LoadingSpinner
+          className={
+            "absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          }
+          size="w-[100px] h-[100px]"
+        />
       )}
     </Layout>
   );
