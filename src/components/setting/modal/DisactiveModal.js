@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import DangerCircle from "public/svg/DangerCircle";
+import { Text } from "@/context/LanguageContext";
+import Inputs from "src/share/Input/Inputs";
+import { BtnSecondary } from "src/share/Button";
+import { fetchData } from "src/components/fetchData/fetchdata";
+import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+
+function DisactiveModal({ data }) {
+  const [load, setLoad] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (item) => {
+    setLoad((perv) => !perv);
+    fetchData(
+      "setting/status-google-authenticator",
+      {
+        secret: data?.registration_data?.google2fa_secret,
+        type: "deactivate",
+        one_time_password: item.one_time_password,
+      },
+      "POST"
+    ).finally(setLoad((perv) => !perv));
+  };
+
+  return (
+    <div>
+      <div className=" text-[#f30a0a] text-[30px] w-[60px] h-[60px] mx-auto text-center flex items-center justify-center">
+        <DangerCircle />
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="mt-[20px] text-center dark:text-white text-black"
+      >
+        <Text tid="GoogleAuthenticatordisactive" />
+        <div className=" mt-[14px]">
+          <Inputs
+            register={{
+              required: {
+                value: true,
+                message: "Enter code",
+              },
+            }}
+            type="text"
+            name="one_time_password"
+            control={control}
+            placeholder=""
+            label={<Text tid="GoogleAuthenticatorcode" />}
+            className="border-none  w-[50%] dark:bg-white bg-[#D1D3D9]  dark:placeholder-black  placeholder-white text-[14px] px-[12px] py-[5px] rounded-[2px] "
+          />
+        </div>
+        <BtnSecondary
+          disabled={load}
+          className="font-medium text-[14px] py-[5px] px-[33px] mt-[20px]"
+          type={"submit"}
+        >
+          {load ? (
+            <LoadingSpinner className={""} size="w-[20px] h-[20px]" />
+          ) : (
+            <Text tid="confirm" />
+          )}
+        </BtnSecondary>
+      </form>
+    </div>
+  );
+}
+
+export default DisactiveModal;

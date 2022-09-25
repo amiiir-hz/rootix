@@ -1,15 +1,15 @@
 import React from "react";
-import TableItem from "../../components/tableItem/tableItem";
+import TableItem from "src/components/tableItem/tableItem";
 import styles from "./swap.module.css";
 import BitLOgo from "../../public/assets/Cryptocurrency.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import ChangeBit from "../../components/changebit/changeBit";
-import { fetchData } from "../../components/fetchData/fetchdata";
+import ChangeBit from "src/components/changebit/changeBit";
+import { fetchData } from "src/components/fetchData/fetchdata";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
+import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
-import Layout from "@components/layout/layout";
+import Layout from "src/components/layout/layout";
 
 const ReactViewWidget = dynamic(
   () => {
@@ -24,12 +24,50 @@ function Swap(props) {
   const [tradingData, setTradingData] = useState(null);
   const [swapTable, setSwapTable] = useState("");
 
+  // var myHeaders = new Headers();
+  // myHeaders.append("Accept", "application/json");
+  // myHeaders.append("Content-Type", "application/json");
+  // myHeaders.append(
+  //   "Authorization",
+  //   "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTU5YWRmNTZjMmJlMTUzYTAyMTA3MjYwMDBmNjE5MjI5ZmU3NDFhMDM4NDFiZWZjNmY2OGZlYzE4ZDk5ODcxY2E5NWZiNjBkMzc4Mjc4ZjgiLCJpYXQiOjE2NjIwMTY0MjMuODU5ODI4LCJuYmYiOjE2NjIwMTY0MjMuODU5ODMsImV4cCI6MTY5MzU1MjQyMy44NTg0NTksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.1-GPu-hVNEqAXXfuWimjmkmogRwTqaXm1JEn7B9Sa_W0AjmD0XU49S7N0lz5oX_Buh8XWeHZ7qzuy3OnG2FQ2B4dQjBj5YX-shwXeRv3b2AfIARyEImjBgkMT72FGzO1eOMsrOxkjCZO0PXhe3OZu8Wmoej74BiYPOSml7Jx7SYH4iptEVZj-NJ5902fQMHY2JYjjB7Tn0QQhaYafmHa7FCQ3r-wcHnieEBj78bV2atekXFxitsW64FSMomyjq2O3Hu0AUsK9mVC8PZHdVVRWPdtbXbxQn3_9jnbR3t6Jf0T3DjbjC7R4Qp_puoD5UTR3lGwlwc2YnFo-sRSW2QApb9CTUYPZVBC_Av4_2DaIOyR_AOrfeqJD_rm8RZaoBPXUTQYZPNoD2WcNwjST_ucP3IuT4O0H776wrjaG_t5tVb0vHUYYVEc8PfHDJiYld_GkHT4woaltj9oJktVlQ-kP_h3zQpxSHGq_HFW81O46G7Gmb3WAzxua9Ic9PlHXyH3MJBesS9wYnGPh11X1MT_NbnwzKPM7IsGbWZIL7_KperaYSpRehtz6JaefFTRSjn7-7MxRBdbz-LahlbVcl1mMlweg2e81SwGPppa0crAcPjGJQ3O5QFN22m2gjedI_y0kYlfrGvsVnqn8wJWh1a79hI-XGLdZ9TYUXEjiSeOat8"
+  // );
+
+  // var requestOptions = {
+  //   method: "GET",
+  //   headers: myHeaders,
+  //   redirect: "follow",
+  // };
+  //  const dataFetching = async () => {
+  //     setIsLOading(true);
+  //     const response = fetchData("setting").then((data) => setData(data.data));
+  //     setIsLOading(false);
+  //   };
+  // const dataFetching = async () => {
+  //   setIsLOading(true);
+  //   const result = await fetchData("swap").then((data) =>
+  //   setSwapTable(data.data)
+  //     // setSwapTable(data.data)
+  //     // console.log("oooooooooooooooo", result)
+  //   );
+  //   if (result) {
+  //   setIsLOading(false);
+  //   }
+
+  //   // let result2 = result.recent_swap;
+  //   // swapTable.recent_swap.map((res, index)=>{
+  //   //   console.log('lllllllllllll',res);
+  //   // })
+  // };
+  // useEffect(() => {
+  //   dataFetching();
+  //   console.log('swap',swapTable);
+  // }, []);
   var myHeaders = new Headers();
   myHeaders.append("Accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append(
     "Authorization",
-    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTc0YTZlNjU4N2IxNDhiNGJlNDFiNTNlM2RlMzlkMTA2ODNjZTlmNjdiNjgwMWFmNDNiMGRmYjM1OGM5NTgyMGU5MjI4M2FmNTRkMWYxNmMiLCJpYXQiOjE2NjA4MDA3NDUuOTE2MzgsIm5iZiI6MTY2MDgwMDc0NS45MTYzODQsImV4cCI6MTY5MjMzNjc0NS45MTM2OTksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Jwmd4pUVEl29y6iF7ONKaI1WYgDMvGt5ZdCSYo--pjKNdukzp5USGAxIO4xH3UdYLvZRNPN18-E6fd4L3I5rLHgM5lsQrvvf_lA0lEhWRV3K6wpdCtWDceYRRg6l3m_2MYJwM6sqyoy1N_q5nW_UDvGIS_lFeOZcx7eUnHlSXenItcYCcRxCecHSxzM-xj_4Hy9EDQX26pur5Rqoixh9mQo3m0BaEYRBp_9LnzmMMt71qrxqwRE2TLshy8NTMtO1e0Rwl8FpLIm0AzRpCixCmBL-uSefZ4DWUnaofocmQXPmRD8yLjWWOGcqsFlA9dJWK_v4VW9KPEYxKaEsdfvHVP7RLF0RWHF634uxg7GD6BT8UkG8Q_u0z7YP5f40XnRIRyX7BN4L07HHsVY0bs9lBRg5RvmCRxrKGp87Z3FYBIuTJu3Z6Uz2APaqkeltbnG1rUM4dhhmUv8YogeyOPeZgzIjVwCPd0HVPt8VklRtrFZ09NrndFwdHcb_TqyJQSOlyQhYI2CWJXjWC3GADfzeb8P89-M1YlktzWSwCb5ODOQ48ru81uGBbOLOXkrqDaXSMCjoj7x770o-DdxMzgtzp4Fi99eLGvcmwmxK2JOGL4Zxl17XdvVv-OCfRMekJ77I8va0OjsLrPepe7rFtdEgH70n9mtAS16Zpajcgu51oCo"
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWM5ZmU5MDhhMDdmZmFhMWRiYmExNDdiYTFiZjE5ZjI0Y2VhM2Q0Yzg2MDlhMmFmOTRhNTA3NThkNmM0YjZhYWM0YTkyZDQ3ZjhlMjQ1NjgiLCJpYXQiOjE2NjIwMTc2NzYuOTYzMDQ5LCJuYmYiOjE2NjIwMTc2NzYuOTYzMDUxLCJleHAiOjE2OTM1NTM2NzYuOTYxNjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.qXGYIcFfkMtHJUwGfKUnpaUIpYkrU0M4aKF858r1yUgaRf_w1eBKa0iZRC9T4vWSDK7nUKd4P3bhZnEnPDng_G5fuK2ZC-Cm8RpPmTYGmdj4TKZBZittuS0UQDQ93HsV0fh_arQYpnYb6l4X_dkyZiVuQ8Taw3Yi3rXxk3c1AzZnp6N45A9b-4s7YaYTraTGefJNx-IlH89P5bTMQm3kBnQPkh4DI6Y7_hb1LU_v3DifS1dY6cYvqAdQlQDZDOAcmw_fv9n9ywThoeUcC2a6Yzn5jFN0rQXov82II_VO-ijb8BeLNCu9yqeEYCYp3Vz5tCY0rWja3CevJsBumoxPh-nfDoIZv71_M00G2umKEmOoam67Rh-8KEN7_lFAn4v0UwqZSmQCL2Nw4mk81FSXWfDyMjRqEq16IQMYvduOeqRMHklfiFg9ADJ1cno-jIV2J1iLjHbz6KiZXGIjG7T_bSpnzaJTWwwR4eeEZQLJpR0yIXs4zCXaeOQ6aawHsuITrCsg_LsESLyTjDt9QDyKHHuxEn_9wD6TZ_rQsMuRW_VB9AcwG44zXc3P62O_Qk-exER1XvbBrJE-cvQ0LuO6TEJG71DNg3F5mmgbk1d20BDVzO8hG5VNxKdJF0gNDA1CDQlLHHg9T5MG4o6LI1mtwWVzPK8KhVCkNOKT1vA6SwU"
   );
 
   // var requestOptions = {
@@ -44,32 +82,54 @@ function Swap(props) {
   //   };
   const dataFetching = async () => {
     setIsLOading(true);
-    const result = fetchData("swap").then((data) => setSwapTable(data.data));
 
-    // const result = await fetchData("swap", requestOptions);
-    // const result2 = await setSwapTable(result.recent_swap)
-    // setSwapTable(result.recent_swap)
+    const result = await fetchDataj("swap", requestOptions);
+    // console.log(result, "result");
 
-    if (result) {
-      console.log(result.recent_swap);
-      setIsLOading(false);
-    }
+    // let result2 = result.data;
+    // console.log(result2, "result2");
+
+    // let result3 = result2.recent_swap;
+    // console.log(result3, "result3");
+    setSwapTable(result.data.recent_swap);
+    // if (swapTable.length > 1) {
+    // console.log(swapTable, "swaptaBLE");
+    setIsLOading(false);
+    // }
+
+    // result3.map((res, index)=>{
+    //   setSwapTable
+    // });
+
+    // result2.map((res, index) => {
+    //   if (res.key === "feature_details") {
+    //     setFeatureDetail(res.contents);
+    //     // console.log(1111111111111, res.contents);
+    //   }
+    //   if (res.key === "usecase") {
+    //     setUsecase(res.contents);
+    //     // console.log(222222222222, res.contents);
+    //   }
+    // });
+    // if (featureDetail && usecase) {
+    //   setIsLOading(false);
+    //   // console.log(333333333333333);
+    // }
   };
   useEffect(() => {
-    // setTheme(localStorage.getItem('theme'))
-    // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-    // console.log(111111111111111111111111111111111111111,theme);
     dataFetching();
-    console.log(swapTable);
   }, []);
+  // const dataFetching = async () => {
+  //   setIsLOading(true);
+  //   const response = fetchData("swap").then((data) => setSwapTable(data.data));
+  //   if (response) {
 
-  // fetch("https://api.rootix.ae/api/v1/login", requestOptions)
-  //   .then(response => response.text())
-  //   .then(result => console.log(result))
-  //   .catch(error => console.log('error', error));
+  //   }
+  //   setIsLOading(false);
+  // };
   // useEffect(() => {
-  //   // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-  //   const data = import("react-tradingview-widget");
+  //   dataFetching();
+  //   console.log(swapTable);
   // }, []);
   // if (theme === "light") {
 
