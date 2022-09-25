@@ -1,0 +1,21 @@
+const fetchDataj = (url, options) => {
+    const data = fetch(`https://api.rootix.ae/api/v1/${url}`, options)
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((err) => err);
+      return data;
+      // .then((response) => {
+      //   if (response.status === 200) {
+      //     return response.json();
+      //   } else {
+      //     return response.json().then((data) => {
+      //       alert(data.message);
+      //     });
+      //   }
+      // })
+      // .catch((err) => err);
+  
+      //section7 minute 3
+  };
+  export default fetchDataj;
+  

@@ -1,15 +1,15 @@
 import React from "react";
-import TableItem from "../../components/tableItem/tableItem";
+import TableItem from "src/components/tableItem/tableItem";
 import styles from "./swap.module.css";
 import BitLOgo from "../../public/assets/Cryptocurrency.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import ChangeBit from "../../components/changebit/changeBit";
-import { fetchData } from "../../components/fetchData/fetchdata";
+import ChangeBit from "src/components/changebit/changeBit";
+import { fetchData } from "src/components/fetchData/fetchdata";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner";
+import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
-import Layout from "@components/layout/layout";
+import Layout from "src/components/layout/layout";
 
 const ReactViewWidget = dynamic(
   () => {

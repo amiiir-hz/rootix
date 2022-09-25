@@ -1,9 +1,9 @@
-import "../styles/globals.css";
-import store, { persistor } from "../redux/store";
+import "src/styles/globals.css";
+import store, { persistor } from "src/redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { LanguageProvider } from "../context/LanguageContext";
-import PageContent from "../hooks/PageContent";
+import { LanguageProvider } from "@/context/LanguageContext";
+import PageContent from "src/share/hooks/PageContent";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {

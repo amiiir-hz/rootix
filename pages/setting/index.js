@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Info from "@components/setting/Info";
-import { fetchData } from "@components/fetchData/fetchdata";
-import LoadingSpinner from "@components/loadingSpinner/loadingSpinner";
-import Layout from "@components/layout/layout";
+import Info from "src/components/setting/Info";
+import { fetchData } from "src/components/fetchData/fetchdata";
+import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+import Layout from "src/components/layout/layout";
 
 function Setting(props) {
   const [isLoading, setIsLOading] = useState(false);
