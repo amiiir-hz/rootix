@@ -1,6 +1,6 @@
 import React from "react";
 import ResponsiveHeader from "../../ResponsiveHeader";
-import SignupForm from "../SignupForm";
+import LoginForm from "../LoginForm";
 import HeaderLogo from "public/assets/register.png";
 import Image from "next/image";
 import { Text } from "@/context/LanguageContext";
@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 function Index() {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/login");
+    router.push("/signup");
   };
   return (
     <div className="w-full h-full">
@@ -27,7 +27,7 @@ function Index() {
         <Text tid={"Rootixexchange"} />
       </p>
       <div className="w-[90%] mx-auto">
-        <SignupForm />
+        <LoginForm />
       </div>
       <div className="flex items-center  justify-center mx-auto mt-[45px] w-[90%] mx-auto ">
         <div className="h-[1.5px] flex-1 bg-[#E6E6E6]"></div>
@@ -46,9 +46,9 @@ function Index() {
         className=" mt-[24px] text-[#4A4844] text-center text-[13px] leading-[16px] font-normal mb-[15px] cursor-pointer"
         onClick={handleClick}
       >
-        <Text tid="alreadysignedup?" />
+        <Text tid="Notamember?" />
         <span className="text-[#5177FD] ml-[3px]">
-          <Text tid="Login" />
+          <Text tid="Signup" />
         </span>
       </p>
     </div>

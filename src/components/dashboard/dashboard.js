@@ -1,7 +1,7 @@
 import React from "react";
 // import styles from "./dashboard.module.css";
 import Image from "next/image";
-import Logo from "../../public/assets/logorootix [Recovered]-0۲ 1.png";
+import Logo from "public/assets/logorootix [Recovered]-0۲ 1.png";
 // import HomeLOgo from "../../public/assets/Vector (2).svg";
 // import SwapLogo from "../../public/assets/Vector (3).svg";
 // import TradeLogo from "../../public/assets/Vector (4).svg";

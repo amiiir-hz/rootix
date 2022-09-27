@@ -4,7 +4,13 @@ import SignupHeader from "./SignupHeader";
 import LoginImage from "../AuthImage";
 import { Text } from "@/context/LanguageContext";
 import Responsive from "./responsive";
+import { useRouter } from "next/router";
+
 function Index() {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/login");
+  };
   return (
     <div className="sm:grid sm:grid-cols-[1fr] md:grid-cols-[0.7fr_1fr] lg:grid-cols-[0.9fr_1fr] w-full h-full">
       <LoginImage />
@@ -19,7 +25,10 @@ function Index() {
             <div className="h-[1.5px] flex-1 bg-[#E6E6E6]"></div>
           </div>
           <SignupForm />
-          <p className=" mt-[24px] text-[#4A4844] text-left text-[17px] leading-[23px] font-medium mb-[15px]">
+          <p
+            className=" mt-[24px] text-[#4A4844] text-left text-[17px] leading-[23px] font-medium mb-[15px] cursor-pointer"
+            onClick={handleClick}
+          >
             <Text tid="alreadysignedup?" />
             <span className="text-[#5177FD] ml-[3px]">
               <Text tid="Login" />

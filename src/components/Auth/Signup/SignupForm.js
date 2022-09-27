@@ -63,7 +63,7 @@ function SignupForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       autoComplete="off"
-      className="mt-[20px] text-center dark:text-white text-black w-full  mx-auto bg-transparent loginForm"
+      className="sm:mt-[20px] mt-[39px] text-center dark:text-white text-black w-full  mx-auto bg-transparent loginForm"
     >
       <Inputs
         type="text"

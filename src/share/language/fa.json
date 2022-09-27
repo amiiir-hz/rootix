@@ -34,5 +34,10 @@
   "enteryouremail": "رمز عبور را وارد کنید",
   "youremailiswrong": "ایمیل واردشده اشتباه است",
   "enteryourpassword": "رمز عبور را وارد کنید",
-  "passwordnumber": "رمز عبور کوتاه است.حداقل هشت رقم وارد کنید"
+  "passwordnumber": "رمز عبور کوتاه است.حداقل هشت رقم وارد کنید",
+  "createuserprofile": "ساخت حساب کاربری",
+  "LoginAccount": "Login Account",
+  "Welcomebacktorootix": "به روتیکس خوش آمدید !",
+  "Welcometorootix": "Welcome to rootix !",
+  "Rootixexchange": " صرافی ارز دیجیتال روتیکس"
 }

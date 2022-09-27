@@ -9,11 +9,14 @@ function LoginHeader() {
     <>
       <div className=" flex items-center justify-between">
         <div className=" flex items-center justify-start">
-          <Image
-            src={logo}
-            alt="ورود"
-            className=" w-full h-full justify-self-end "
-          ></Image>
+          <div className=" w-[78px] h-[78px]">
+            <Image
+              src={logo}
+              alt="ورود"
+              className=" w-full h-full justify-self-end "
+            ></Image>
+          </div>
+
           <p className="  text-[#F7931E] text-[26px] font-bold leading-[26px]">
             ROOTIX
           </p>
