@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Info from "src/components/setting/Info";
-import { fetchData } from "src/components/fetchData/fetchdata";
-import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
-import Layout from "src/components/layout/layout";
+import { fetchData } from "@/src/share/fetchData/fetchdata";
+import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
+import Layout from "src/share/layout/layout";
 
 function Setting(props) {
   const [isLoading, setIsLOading] = useState(false);
@@ -23,7 +23,6 @@ function Setting(props) {
   useEffect(() => {
     dataFetching();
   }, []);
-  console.log("data :>> ", data);
   return (
     <Layout>
       {!isLoading ? (

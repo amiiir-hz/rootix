@@ -6,8 +6,8 @@ import { Text } from "@/context/LanguageContext";
 import { BtnPrimarylight } from "src/share/Button";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { fetchData } from "src/components/fetchData/fetchdata";
-import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+import { fetchData } from "@/src/share/fetchData/fetchdata";
+import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
 
 function SignupForm() {
   const [load, setLoad] = useState(false);

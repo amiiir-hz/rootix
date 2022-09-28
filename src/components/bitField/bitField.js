@@ -5,7 +5,7 @@ import Select, { components } from "react-select";
 
 // import styles from "./bitField.module.css";
 import Image from "next/image";
-import BitLOgo1 from "../../public/assets/bitcoin-logo-svgrepo-com.svg";
+import BitLOgo1 from "public/assets/bitcoin-logo-svgrepo-com.svg";
 import { useForm } from "react-hook-form";
 
 function BitField(props) {
@@ -79,7 +79,7 @@ function BitField(props) {
         onSubmit={handleSubmit(onSubmit)}
         className="mt-[20px] text-center dark:text-white text-black"
       > */}
-        {/* <Select
+      {/* <Select
           control={control}
           name="name"
           register={{
@@ -119,28 +119,28 @@ function BitField(props) {
             bitcoin
           </option>
         </Select> */}
-        <IconSelect
-          control={control}
-          name="name"
-          register={{
-            required: {
-              value: false,
-              // message: "Enter Name",
-            },
-          }}
-          className="dark:bg-gray-800 text-black bg-white rounded-lg -mt-8  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10"
-          options={options}
-        />
-        <input
-          type="number"
-          name="bitValue"
-          placeholder={0.0}
-          min={0.0}
-          max={100.0}
-          step={0.01}
-          className="bg-inherit border-none focus:border-0 h-10 rounded-lg"
-        />
-        {/* <button type="submit">click me</button> */}
+      <IconSelect
+        control={control}
+        name="name"
+        register={{
+          required: {
+            value: false,
+            // message: "Enter Name",
+          },
+        }}
+        className="dark:bg-gray-800 text-black bg-white rounded-lg -mt-8  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10"
+        options={options}
+      />
+      <input
+        type="number"
+        name="bitValue"
+        placeholder={0.0}
+        min={0.0}
+        max={100.0}
+        step={0.01}
+        className="bg-inherit border-none focus:border-0 h-10 rounded-lg"
+      />
+      {/* <button type="submit">click me</button> */}
       {/* </form> */}
       {/* <select className="dark:bg-gray-800 text-black bg-white border rounded-lg  border-gray-600 placeholder-gray-400 dark:text-white focus:ring-blue-500 w-40 focus:border-blue-500 mr-1 ml-0 h-10">
         <option className="flex flex-row ">

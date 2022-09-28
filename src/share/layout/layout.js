@@ -1,6 +1,6 @@
 import Footer from "../footer/footer";
 import Header from "../header/header";
-import Dashboard from "../dashboard/dashboard";
+import Dashboard from "../sidebar/Sidebar";
 import HeaderMobile from "../header/headerMobile";
 function Layout(props) {
   return (
