@@ -1,15 +1,16 @@
 import React from "react";
 import TableItem from "src/components/tableItem/tableItem";
 import styles from "./swap.module.css";
-import BitLOgo from "../../public/assets/Cryptocurrency.png";
+import BitLOgo from "public/assets//Cryptocurrency.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ChangeBit from "src/components/changebit/changeBit";
-import { fetchData } from "src/components/fetchData/fetchdata";
+import { fetchData } from "@/src/share/fetchData/fetchdata";
+import  fetchDataj  from "@/src/share/fetchData/fetchDataj";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
-import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
-import Layout from "src/components/layout/layout";
+import Layout from "src/share/layout/layout";
 
 const ReactViewWidget = dynamic(
   () => {
@@ -70,11 +71,11 @@ function Swap(props) {
     "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWM5ZmU5MDhhMDdmZmFhMWRiYmExNDdiYTFiZjE5ZjI0Y2VhM2Q0Yzg2MDlhMmFmOTRhNTA3NThkNmM0YjZhYWM0YTkyZDQ3ZjhlMjQ1NjgiLCJpYXQiOjE2NjIwMTc2NzYuOTYzMDQ5LCJuYmYiOjE2NjIwMTc2NzYuOTYzMDUxLCJleHAiOjE2OTM1NTM2NzYuOTYxNjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.qXGYIcFfkMtHJUwGfKUnpaUIpYkrU0M4aKF858r1yUgaRf_w1eBKa0iZRC9T4vWSDK7nUKd4P3bhZnEnPDng_G5fuK2ZC-Cm8RpPmTYGmdj4TKZBZittuS0UQDQ93HsV0fh_arQYpnYb6l4X_dkyZiVuQ8Taw3Yi3rXxk3c1AzZnp6N45A9b-4s7YaYTraTGefJNx-IlH89P5bTMQm3kBnQPkh4DI6Y7_hb1LU_v3DifS1dY6cYvqAdQlQDZDOAcmw_fv9n9ywThoeUcC2a6Yzn5jFN0rQXov82II_VO-ijb8BeLNCu9yqeEYCYp3Vz5tCY0rWja3CevJsBumoxPh-nfDoIZv71_M00G2umKEmOoam67Rh-8KEN7_lFAn4v0UwqZSmQCL2Nw4mk81FSXWfDyMjRqEq16IQMYvduOeqRMHklfiFg9ADJ1cno-jIV2J1iLjHbz6KiZXGIjG7T_bSpnzaJTWwwR4eeEZQLJpR0yIXs4zCXaeOQ6aawHsuITrCsg_LsESLyTjDt9QDyKHHuxEn_9wD6TZ_rQsMuRW_VB9AcwG44zXc3P62O_Qk-exER1XvbBrJE-cvQ0LuO6TEJG71DNg3F5mmgbk1d20BDVzO8hG5VNxKdJF0gNDA1CDQlLHHg9T5MG4o6LI1mtwWVzPK8KhVCkNOKT1vA6SwU"
   );
 
-  // var requestOptions = {
-  //   method: "GET",
-  //   headers: myHeaders,
-  //   redirect: "follow",
-  // };
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
   //  const dataFetching = async () => {
   //     setIsLOading(true);
   //     const response = fetchData("setting").then((data) => setData(data.data));

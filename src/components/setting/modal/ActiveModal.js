@@ -5,8 +5,8 @@ import DisactiveModal from "./DisactiveModal";
 import { useForm } from "react-hook-form";
 import { BtnSecondary } from "src/share/Button";
 import Inputs from "src/share/Input/Inputs";
-import { fetchData } from "src/components/fetchData/fetchdata";
-import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+import { fetchData } from "@/src/share/fetchData/fetchdata";
+import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
 
 var CryptoJS = require("crypto-js");
 

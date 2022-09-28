@@ -1,15 +1,8 @@
 import React from "react";
-// import styles from "./dashboard.module.css";
 import Image from "next/image";
-import Logo from "../../public/assets/logorootix [Recovered]-0۲ 1.png";
-// import HomeLOgo from "../../public/assets/Vector (2).svg";
-// import SwapLogo from "../../public/assets/Vector (3).svg";
-// import TradeLogo from "../../public/assets/Vector (4).svg";
-// import BanksLogo from "../../public/assets/Group 461.svg";
-// import TicketLogo from "../../public/assets/Vector (5).svg";
-// import ListLogo from "../../public/assets/Vector (6).svg";
+import Logo from "public/assets/logorootix [Recovered]-0۲ 1.png";
 
-function Dashboard(props) {
+function Sidebar(props) {
   return (
     <div
       className={`rounded-3xl md:rounded-none mt-4 md:mt-0 md:w-1/5 w-screen md:h-screen bg-white dark:bg-[#111C44] md:h-auto drop-shadow-2xl md:drop-shadow-none fixed bottom-20 z-10 md:z-0 md:static`}
@@ -148,4 +141,4 @@ function Dashboard(props) {
     </div>
   );
 }
-export default Dashboard;
+export default Sidebar;

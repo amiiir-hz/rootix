@@ -34,5 +34,10 @@
   "enteryouremail": "Enter your email",
   "youremailiswrong": "your email is wrong",
   "enteryourpassword": "Enter your password",
-  "passwordnumber": "password is too short,at least 8 character"
+  "passwordnumber": "password is too short,at least 8 character",
+  "createuserprofile": "create Account",
+  "LoginAccount": "Login Account",
+  "Welcomebacktorootix": "Welcome back to rootix !",
+  "Welcometorootix": "Welcome to rootix !",
+  "Rootixexchange": "Rootix exchange"
 }

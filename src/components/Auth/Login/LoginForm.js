@@ -60,14 +60,14 @@ function LoginForm() {
         label={<Text tid="Password" />}
         message="رمز عبور را وارد کنید"
         name="password"
-        login={false}
+        login={true}
         control={control}
         placeholder="Min. 8 characters"
         full="mt-[14px]"
         classes="text-[#C4C4C4] py-[17px] px-[19px] placeholder:text-[#C4C4C4] text-[14px] font-normal leading-[14px] "
       />
 
-      <div className=" flex items-start justify-between mt-[13px]">
+      <div className=" flex sm:flex-row flex-col items-start justify-between mt-[13px]">
         <CheckBox
           name="Keepmesignedin"
           control={control}
@@ -75,16 +75,6 @@ function LoginForm() {
           classNamedir=" text-[#4A4844] text-[16px] font-medium leading-[22px]"
           className=" w-[20px] h-[20px] mr-[9px]"
         />
-        {/* <CheckBox
-          label={<Text tid="Keepmesignedin " />}
-          control={control}
-          register={{
-            required: {
-              value: true,
-              message: "Enter email",
-            },
-          }}
-        /> */}
         <div>
           <ReCAPTCHA sitekey="YOUR-SITE-KEY" onChange={onChange} />
         </div>

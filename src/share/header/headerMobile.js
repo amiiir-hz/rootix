@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-import AvatarImage from "../../public/assets/Elipse 5.png";
-import useDarkMode from "../../hooks/useDarkMode";
+import AvatarImage from "public/assets/Elipse 5.png";
+import useDarkMode from "src/share/hooks/useDarkMode";
 import { useState } from "react";
 
 function HeaderMobile(props) {
@@ -10,7 +10,7 @@ function HeaderMobile(props) {
   const [showSearch, setShowSearch] = useState(false);
 
   return !showSearch ? (
-    <div className="w-full flex flex-row justify-between  block md:hidden pl-3 pr-3 mt-2">
+    <div className="w-full flex flex-row justify-between   md:hidden pl-3 pr-3 mt-2">
       <div className="flex flex-row w-3/5  items-center">
         <div className=" w-12 h-12">
           <Image

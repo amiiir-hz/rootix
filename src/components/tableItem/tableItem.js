@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./tableItem.module.css";
 import Image from "next/image";
-import BitLOgo from "public/Cryptocurrency.png";
-import LoadingSpinner from "src/components/loadingSpinner/loadingSpinner";
+import BitLOgo from "public/assets//Cryptocurrency.png";
+import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
 
 function TableItem(props) {
   console.log("items", props.items);
   const items = props.items;
   // {
-  return items.length > 0 ? (
+  return items && items.length > 0 ? (
     items.map((item, idx) => (
       <div key={item.id}>
         <hr className={styles.tableitem__h_line} />
@@ -52,7 +52,7 @@ function TableItem(props) {
               {item.financeable.price}
             </td>
           )}
-            {item.type == 2 && (
+          {item.type == 2 && (
             <td className="w-1/4 mx-2 font-normal text-base text-green-500">
               {item.financeable.price}
             </td>
