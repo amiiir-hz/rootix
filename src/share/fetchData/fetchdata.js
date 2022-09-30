@@ -51,7 +51,7 @@ const sendRequest = (url, token, data, method) =>
       Authorization: token ? `Bearer ${token}` : null,
       credentials: "include",
       Accept: "application/json",
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "aapplication/json",
     },
     method,
     body: JSON.stringify(data),

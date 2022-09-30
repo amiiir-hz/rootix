@@ -19,7 +19,9 @@ function Header(props) {
   const router = useRouter();
 
   return (
-    <div className={`mt-10 mb-8 mx-6 md:flex-row justify-between hidden md:flex`}>
+    <div
+      className={`mt-10 mb-8 mx-6 md:flex-row justify-between hidden md:flex`}
+    >
       <div className="text-start">
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1">
@@ -49,7 +51,9 @@ function Header(props) {
                   href={`${router.pathname}`}
                   className="ml-1 text-sm font-medium text-[#2B3674] dark:text-gray-300 dark:hover:text-white"
                 >
-                  {router.pathname.split("/")}
+                  {router.pathname === "/"
+                    ? "dashboard"
+                    : router.pathname.split("/")}
                 </a>
               </div>
             </li>

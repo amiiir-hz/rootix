@@ -45,5 +45,8 @@
   "trade": "Trade",
   "lists": "lists",
   "banks": "Banks",
-  "tickets": "Tickets"
+  "tickets": "Tickets",
+  "asset": "Asset",
+  "profit": "Profit",
+  "Circulation": "Circulation"
 }

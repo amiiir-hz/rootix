@@ -49,6 +49,7 @@ module.exports = {
         basiclight: "1px 2px 8px rgba(0, 0, 0, 0.13)",
         login:
           "0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168)",
+        chartLine: "3px 3px 10px rgba(0, 0, 0, 0.05)",
       },
       animation: {
         showForm: "showForm 0.6s ",
