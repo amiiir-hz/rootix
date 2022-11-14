@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ChangeBit from "src/components/changebit/changeBit";
 import { fetchData } from "@/src/share/fetchData/fetchdata";
-import  fetchDataj  from "@/src/share/fetchData/fetchDataj";
+import fetchDataj from "@/src/share/fetchData/fetchDataj";
 // import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import LoadingSpinner from "src/share/loadingSpinner/loadingSpinner";
 import dynamic from "next/dynamic";
@@ -24,7 +24,6 @@ function Swap(props) {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [tradingData, setTradingData] = useState(null);
   const [swapTable, setSwapTable] = useState("");
-
   // var myHeaders = new Headers();
   // myHeaders.append("Accept", "application/json");
   // myHeaders.append("Content-Type", "application/json");

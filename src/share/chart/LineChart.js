@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -8,9 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
+import useDarkMode from "src/share/hooks/useDarkMode";
 function LineChart(props) {
-  console.log("props", props);
+  const [colorTheme, setTheme] = useDarkMode();
   return (
     <ResponsiveContainer>
       <AreaChart
@@ -32,7 +32,7 @@ function LineChart(props) {
             spreadMethod="reflect"
           >
             <stop offset="0" stopColor={props.color} />
-            <stop offset="1" stopColor={props.color1} />
+            <stop offset="1" stopColor={"rgba(255,255,255,0)"} />
           </linearGradient>
         </defs>
         <Area

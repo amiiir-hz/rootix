@@ -1,14 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-// import { connect } from "react-redux";
-// import {modeSeloctor} from '../../redux/actions/modeAction'
 import AvatarImage from "public/assets/Elipse 5.png";
-// import AvatarImage from "../../public/assets/Vector (9).png";
-// import Nightmode from "../../public/assets/Vector (10).png";
-// import Notification from "../../public/assets/Vector (1).svg";
-// import SearchIcon from "../../public/assets/icons8-search.svg";
-// import SlashIcon from "../../public/assets/slash-icon.svg";
 import useDarkMode from "src/share/hooks/useDarkMode";
 import { useRouter } from "next/router";
 

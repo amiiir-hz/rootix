@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         <PersistGate persistor={persistor}>
           <LanguageProvider>
             <PageContent>
-              <Component {...pageProps} />
+                <Component {...pageProps} />
             </PageContent>
           </LanguageProvider>
         </PersistGate>

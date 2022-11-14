@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import Pic from "public/svg/chartarea.svg";
+import Arrowdown from "public/svg/arrowdown.svg";
+import Arrowup from "public/svg/arrowup.svg";
 import { Text } from "@/context/LanguageContext";
 import dynamic from "next/dynamic";
 const LineChart = dynamic(() => import("src/share/chart/LineChart"), {
   ssr: false,
 });
 
-function ChartBox() {
+function AreaChartBox() {
   return (
     <div className="grid-cols-4 grid gap-x-[19px] px-[23px]">
       {ChartBoxInfo.map((item, id) => (
@@ -14,7 +16,7 @@ function ChartBox() {
           key={id}
           className=" dark:bg-[#111C44] bg-white rounded-[20px] pt-[8px] shadow-chartLine overflow-hidden"
         >
-          <div className=" flex items-center justify-between px-[22px]">
+          <div className=" flex items-start justify-between px-[22px]">
             <div className="flex items-center justify-start">
               <div
                 className={`${item.back} py-[11.67px] px-[12.47px] rounded-[50%] mr-[12.35px]`}
@@ -23,12 +25,37 @@ function ChartBox() {
               </div>
               <p className=" dark:text-white text-[#2B3674]">{item.title} </p>
             </div>
+            <div className=" text-[17px] leading-[36px] font-normal dark:text-white text-[#2B3674] ">
+              {item.datainfo.toLocaleString()}
+              <span>$</span>
+            </div>
+          </div>
+          <div className=" text-end px-[22px]">
+            <p className="dark:text-white text-[#2B3674] leading-[3.6px] text-[15px] ">
+              <Text tid="mounth" />
+              <span className=" mx-[8px]">/</span>
+              <span
+                className={
+                  item.factorPrecent.includes("-")
+                    ? "text-[#FF4B26] text-[17px] leading-[36px]"
+                    : "text-[#20DC49] text-[17px] leading-[36px]"
+                }
+              >
+                {item.factorPrecent.split(item.factorPrecent[0])}
+                <span>
+                  {item.factorPrecent.includes("-") ? (
+                    <Arrowdown className=" inline-block ml-[10.25px]" />
+                  ) : (
+                    <Arrowup className=" inline-block ml-[10.25px]" />
+                  )}
+                </span>
+              </span>
+            </p>
           </div>
           <div style={{ width: "100%", height: 68 }}>
             <LineChart
               stroke={item.borderColor}
               color={item.color}
-              color1={item.color1}
               id={id}
               data={item.data}
             />
@@ -39,7 +66,7 @@ function ChartBox() {
   );
 }
 
-export default ChartBox;
+export default AreaChartBox;
 const data = [
   {
     name: "Page A",
@@ -87,47 +114,47 @@ const data = [
 
 const ChartBoxInfo = [
   {
-    factorPrecent: "+20%",
+    factorPrecent: "-21.9%",
     title: <Text tid={"Circulation"} />,
     num: "460",
     color: "#D1B656",
-    color1: "#111C44",
     borderColor: "#DF944B",
     data: data,
     back: "bg-[#EDE2BA]",
     ico: "text-[#DF944B]",
+    datainfo: 50023032,
   },
   {
-    factorPrecent: "-10%",
+    factorPrecent: "+21.9%",
     title: <Text tid={"Circulation"} />,
     num: "1236",
     color: "#72DCDA",
-    color1: "#111C44",
     borderColor: "#21D3D0",
     data: data,
     back: "bg-[#D9F6F6]",
     ico: "text-[#21D3D0]",
+    datainfo: 50023032,
   },
   {
-    factorPrecent: "-10%",
+    factorPrecent: "-21.9%",
     title: <Text tid={"profit"} />,
     num: "120",
     color: "#A7A2FB",
-    color1: "#111C44",
     borderColor: "#004E8F",
     data: data,
     back: "bg-[#CECBFD]",
     ico: "text-[#004E8F]",
+    datainfo: 50023032,
   },
   {
-    factorPrecent: "+20%",
+    factorPrecent: "-21.9%",
     title: <Text tid={"asset"} />,
     num: "350",
     color: "#F4898A",
-    color1: "#111C44",
     borderColor: "#EB6262",
     data: data,
     back: "bg-[#FBD1D2]",
     ico: "text-[#EB6061]",
+    datainfo: 50023032,
   },
 ];

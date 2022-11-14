@@ -48,5 +48,11 @@
   "tickets": "Tickets",
   "asset": "Asset",
   "profit": "Profit",
-  "Circulation": "Circulation"
+  "Circulation": "Circulation",
+  "mounth": "mounth",
+  "SalesStats": "Sales Stats",
+  "Last6Months": "Last 6 Months",
+  "buy": "buy",
+  "Sales": "Sales",
+  "market": "market"
 }

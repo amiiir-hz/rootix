@@ -48,5 +48,11 @@
   "tickets": "تیکت ها",
   "asset": "دارایی کیف پول",
   "profit": "دارایی بر درآمد",
-  "Circulation": "گردش ماهیانه"
+  "Circulation": "گردش ماهیانه",
+  "mounth": "ماه",
+  "SalesStats": "Sales Stats",
+  "Last6Months": "Last 6 Months",
+  "buy": "buy",
+  "Sales": "Sales",
+  "market": "بازار"
 }

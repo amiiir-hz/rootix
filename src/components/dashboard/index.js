@@ -1,11 +1,13 @@
 import React from "react";
 import Layout from "src/share/layout/layout";
-import ChartBox from "./ChartBox";
+import AreaChartBox from "./AreaChartBox";
+import SecondPart from "./SecondPart";
 
 function Index() {
   return (
     <Layout>
-      <ChartBox />
+      <AreaChartBox />
+      <SecondPart />
     </Layout>
   );
 }
