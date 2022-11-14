@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Layout from "src/share/layout/layout";
+import AreaChartBox from "./AreaChartBox";
+import SecondPart from "./SecondPart";
 
-function index() {
+function Index() {
   return (
-    <div>index</div>
-  )
+    <Layout>
+      <AreaChartBox />
+      <SecondPart />
+    </Layout>
+  );
 }
 
-export default index
+export default Index;

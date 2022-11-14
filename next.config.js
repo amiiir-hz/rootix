@@ -1,20 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // reactStrictMode: true,
+  reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['s2.coinmarketcap.com'],
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
   },
-}
+};
 
-module.exports = nextConfig
-
-
-// const withImages = require('next-images')
-// module.exports = withImages({
-//   fileExtensions: ["jpg", "jpeg", "png", "gif"],
-//   inlineImageLimit: false,
-//   webpack(config, options) {
-//     return config
-//   }
-// })
+module.exports = nextConfig;

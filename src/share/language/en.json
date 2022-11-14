@@ -39,5 +39,20 @@
   "LoginAccount": "Login Account",
   "Welcomebacktorootix": "Welcome back to rootix !",
   "Welcometorootix": "Welcome to rootix !",
-  "Rootixexchange": "Rootix exchange"
+  "Rootixexchange": "Rootix exchange",
+  "Dashboard": "Dashboard",
+  "swap": "Swap",
+  "trade": "Trade",
+  "lists": "lists",
+  "banks": "Banks",
+  "tickets": "Tickets",
+  "asset": "Asset",
+  "profit": "Profit",
+  "Circulation": "Circulation",
+  "mounth": "mounth",
+  "SalesStats": "Sales Stats",
+  "Last6Months": "Last 6 Months",
+  "buy": "buy",
+  "Sales": "Sales",
+  "market": "market"
 }
