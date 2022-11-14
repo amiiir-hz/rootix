@@ -1,14 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-// import { connect } from "react-redux";
-// import {modeSeloctor} from '../../redux/actions/modeAction'
 import AvatarImage from "public/assets/Elipse 5.png";
-// import AvatarImage from "../../public/assets/Vector (9).png";
-// import Nightmode from "../../public/assets/Vector (10).png";
-// import Notification from "../../public/assets/Vector (1).svg";
-// import SearchIcon from "../../public/assets/icons8-search.svg";
-// import SlashIcon from "../../public/assets/slash-icon.svg";
 import useDarkMode from "src/share/hooks/useDarkMode";
 import { useRouter } from "next/router";
 
@@ -19,7 +12,9 @@ function Header(props) {
   const router = useRouter();
 
   return (
-    <div className={`mt-10 mb-8 mx-6 md:flex-row justify-between hidden md:flex`}>
+    <div
+      className={`mt-10 mb-8 mx-6 md:flex-row justify-between hidden md:flex`}
+    >
       <div className="text-start">
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1">
@@ -49,7 +44,9 @@ function Header(props) {
                   href={`${router.pathname}`}
                   className="ml-1 text-sm font-medium text-[#2B3674] dark:text-gray-300 dark:hover:text-white"
                 >
-                  {router.pathname.split("/")}
+                  {router.pathname === "/"
+                    ? "dashboard"
+                    : router.pathname.split("/")}
                 </a>
               </div>
             </li>

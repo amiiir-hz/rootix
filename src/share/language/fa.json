@@ -39,5 +39,20 @@
   "LoginAccount": "Login Account",
   "Welcomebacktorootix": "به روتیکس خوش آمدید !",
   "Welcometorootix": "Welcome to rootix !",
-  "Rootixexchange": " صرافی ارز دیجیتال روتیکس"
+  "Rootixexchange": " صرافی ارز دیجیتال روتیکس",
+  "Dashboard": "داشبورد",
+  "swap": "تبادل",
+  "trade": "خرید و فروش",
+  "lists": "لیست ها",
+  "banks": "بانک ها",
+  "tickets": "تیکت ها",
+  "asset": "دارایی کیف پول",
+  "profit": "دارایی بر درآمد",
+  "Circulation": "گردش ماهیانه",
+  "mounth": "ماه",
+  "SalesStats": "Sales Stats",
+  "Last6Months": "Last 6 Months",
+  "buy": "buy",
+  "Sales": "Sales",
+  "market": "بازار"
 }
