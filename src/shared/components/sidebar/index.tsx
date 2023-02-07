@@ -20,9 +20,9 @@ function Sidebar({ translate }: AboutProps) {
   const router = useRouter();
   const [list, setList] = useState<List[]>();
   const [role] = Userrole();
-
+  console.log("role :>> ", role);
   useEffect(() => {
-    if (role=== "admin") {
+    if (role === "admin") {
       setList(listadmin);
     } else {
       setList(listuser);
@@ -62,6 +62,7 @@ function Sidebar({ translate }: AboutProps) {
                 <div
                   className={
                     (router.pathname === "/" && item.name === "Dashboard") ||
+                    (router.pathname === "/" && item.name === "userlist") ||
                     router.pathname.replace("/", "") === item.name
                       ? "text-[#4318FF] dark:text-white  md:pl-[31.8px] mx-auto md:mx-0 md:mr-[23.8px] pl-0"
                       : "text-[#A3AED0] dark:text-white  md:pl-[31.8px] mx-auto md:mx-0 md:mr-[23.8px] pl-0"
@@ -74,6 +75,7 @@ function Sidebar({ translate }: AboutProps) {
                 <div
                   className={
                     (router.pathname === "/" && item.name === "Dashboard") ||
+                    (router.pathname === "/" && item.name === "userlist") ||
                     router.pathname.replace("/", "") === item.name
                       ? "hidden md:block capitalize text-[#2B3674] dark:text-white cursor-pointer font-bold text-[16px] leading-[30px]"
                       : "hidden md:block capitalize text-[#A3AED0] dark:text-white cursor-pointer font-bold text-[16px] leading-[30px]"
@@ -83,6 +85,7 @@ function Sidebar({ translate }: AboutProps) {
                 </div>
               </div>
               {((router.pathname === "/" && item.name === "Dashboard") ||
+                (router.pathname === "/" && item.name === "userlist") ||
                 router.pathname.replace("/", "") === item.name) && (
                 <div className="w-[4px] rounded-[25px] bg-[#7551FF] md:h-full hidden invisible md:visible md:inline-block" />
               )}
@@ -104,7 +107,7 @@ const listuser = [
     ico: <Swap />,
   },
   {
-    name: "trade",
+    name: "wallet",
     ico: <Trade />,
   },
   {
@@ -135,19 +138,19 @@ const listadmin = [
     ico: <Swap />,
   },
   {
-    name: "trade",
+    name: "authenticationverfication",
     ico: <Trade />,
   },
   {
-    name: "lists",
+    name: "withdrawalrequestdetail",
     ico: <List />,
   },
   {
-    name: "banks",
+    name: "depositrequest",
     ico: <Banks />,
   },
   {
-    name: "tickets",
+    name: "withdrawalrequest",
     ico: <Ticket />,
   },
   {

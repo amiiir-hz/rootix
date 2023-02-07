@@ -26,7 +26,7 @@ const schema = yup.object({
   password: yup
     .string()
     .required("Enter your password")
-    .min(8, "رمز عبور کوتاه است.حداقل هشت رقم وارد کنید"),
+    .min(8, "your password is too short,atleast 8 number"),
 });
 
 function Index({ translate }: AboutProps) {
@@ -34,10 +34,7 @@ function Index({ translate }: AboutProps) {
   const { enqueueSnackbar } = useSnackbar();
   const router = useRouter();
   const setUser = useSetUser();
-  // const setUserIfSuccess = useCallback((user: UserType) => {
-  //   setUser(user);
-  //   router.push("/");
-  // }, []);
+
   const setUserIfSuccess = (user: UserType) => {
     setUser(user);
     saveCookie(USER_ROLE, user);
@@ -75,7 +72,6 @@ function Index({ translate }: AboutProps) {
     }
   };
 
-  console.log("saveUserMutation.isLoading", saveUserMutation.isLoading);
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}

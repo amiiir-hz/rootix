@@ -5,9 +5,9 @@ export default () => {
   const [value, setValue] = useState("");
   const user = useGetUser();
   useEffect(() => {
-    if (user?.is_admin === "0") {
+    if (user?.is_admin === "1") {
       setValue("admin");
-    } else {
+    } else if (user?.is_admin === "0") {
       setValue("client");
     }
   }, [user]);

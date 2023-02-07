@@ -74,3 +74,16 @@ function SecondaryBtn1({
 }
 
 export { SecondaryBtn1 };
+function SecondarySubmitBtn1({ disabled, className, children }: Propssubmit) {
+  return (
+    <button
+      type={"submit"}
+      disabled={disabled}
+      className={`text-white  bg-[#2B3674] dark:bg-[#11047A]  rounded-[4px] focus:outline-none ${className} `}
+    >
+      {children}
+    </button>
+  );
+}
+
+export { SecondarySubmitBtn1 };

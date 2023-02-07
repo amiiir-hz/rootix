@@ -9,10 +9,13 @@ import Sun from "public/asset/svg/sun.svg";
 import Moon from "public/asset/svg/moon.svg";
 import { useGetUser } from "src/shared/auth/UserProvider";
 import Userrole from "src/shared/hooks/userrole";
+import { LangContext } from "src/shared/context/LanguageContext";
 
 function Index() {
   const router = useRouter();
-
+  const {
+    dispatch: { translate },
+  } = useContext(LangContext);
   const themeCtx: { isDarkTheme?: boolean; toggleThemeHandler: () => void } =
     useContext(MyThemeContext);
   const user = useGetUser();
@@ -75,7 +78,10 @@ function Index() {
               ? role === "admin"
                 ? "user list"
                 : "dashboard"
-              : router.pathname.split("/")}
+              : null}
+            {panellist.map(
+              (item, id) => `/${item}` === router.pathname && translate(item)
+            )}
           </div>
         </div>
 
@@ -153,3 +159,11 @@ function Index() {
 }
 
 export default Index;
+
+const panellist = [
+  "authenticationverfication",
+  "authenticatelist",
+  "withdrawalrequestdetail",
+  "depositrequest",
+  "withdrawalrequest",
+];

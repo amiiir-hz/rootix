@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 interface Props {
-  className: string
+  className: string;
 }
 const LoadingScreen = () => {
   return (
@@ -13,10 +13,10 @@ const LoadingScreen = () => {
         <div className="ball three"></div>
       </Balls>
     </Screen>
-  )
-}
+  );
+};
 
-export default LoadingScreen
+export default LoadingScreen;
 
 const Balls = styled.div`
   display: flex;
@@ -49,13 +49,13 @@ const Balls = styled.div`
       transform: translateY(0);
     }
     50% {
-      transform: translateY(20px);
+      transform: translateY(10px);
     }
     100% {
       transform: translateY(0);
     }
   }
-`
+`;
 const Screen = styled.div`
   position: relative;
   height: 100%;
@@ -75,4 +75,4 @@ const Screen = styled.div`
       opacity: 1;
     }
   }
-`
+`;
