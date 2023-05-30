@@ -49,7 +49,7 @@ function Index({ translate }: AboutProps) {
         enqueueSnackbar("Operation was successful!", {
           variant: "success",
         }),
-        router.push("/");
+        router.push("/setup");
     },
   });
   const onSubmit = async (data: IFormInputs) => {

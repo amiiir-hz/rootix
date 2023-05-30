@@ -20,7 +20,7 @@ export type UserType = {
   userTypes: UserTypes
   userRole: string
   verify_type: number
-  is_admin: string
+  is_admin: number
 }
 
 export type LoginType = 'GOOGLE' | 'FACE_BOOK'

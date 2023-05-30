@@ -38,8 +38,11 @@ function Index({ translate }: AboutProps) {
   const setUserIfSuccess = (user: UserType) => {
     setUser(user);
     saveCookie(USER_ROLE, user);
-
-    router.push("/");
+    if (user?.verify_type) {
+      router.push("/");
+    } else {
+      router.push("/setup");
+    }
   };
   const {
     register,
